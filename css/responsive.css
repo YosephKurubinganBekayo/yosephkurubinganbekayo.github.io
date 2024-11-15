@@ -9,17 +9,15 @@
   --font-black: #000000;
 }
 html {
-  font-size: 100%; /* 16px */
+  font-size: 100%; 
 }
 
 @media (max-width: 1200px) {
-  html {
-  }
+
 }
 
 @media (max-width: 991px) {
-  html {
-  }
+ 
   .hero_tagline {
 
     text-align: center;
@@ -30,39 +28,14 @@ html {
 
 /* iiiiiii */
 @media (max-width: 768px) {
-  html {
-  }
+
 }
 
 @media (max-width: 576px) {
-  html {
-  }
-  .nav-color {
-    background-color: var(--white);
-    transition: all 0.3s ease 0s;
-    color: var(--font-black) !important;
-  }
+ 
 
-  /* #hero {
-    height: 50vh;
-    width: 100%;
-  } */
-  /* .img-hero {
-    height: auto;
-    width: 100%;
-  } */
 }
 
 @media (max-width: 400px) {
-  html {
-  }
-  /* .nav-color {
-    background-color: var(--white);
-    transition: all 0.3s ease 0s;
-  }
-  .nav-second-color {
-    background-color: #ffffff;
-    transition: all 0.3s ease 0s;
-    box-shadow: 0 5px 5px 0 rgb(0, 0, 0, 0.1);
-  } */
+
 }
