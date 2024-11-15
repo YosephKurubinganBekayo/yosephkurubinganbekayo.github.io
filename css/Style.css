@@ -73,7 +73,7 @@ body {
 }
 .navbar-brand {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
 }
 .nav-link {
   font-size: 16px;
@@ -122,14 +122,14 @@ body {
 .hero_tagline h1 {
   color: var(--font-white);
   font-weight: 700;
-  /* font-size: 36px; */
+  font-size: 32px;
   line-height: 50px;
 }
 #hero h1 span {
   color: var(--primary);
 }
 .hero_tagline p {
-  /* font-size: 16px; */
+  font-size: 16px;
   color: var(--font-white);
   margin-bottom: 60px;
   margin-top: 20px;
