@@ -19,9 +19,13 @@ html {
 }
 
 @media (max-width: 992px) {
+<<<<<<< HEAD
   html {
     font-size: 80%; /* 12.8px */
   }
+=======
+
+>>>>>>> 1261bff1f6af6a286b1fb908f860f1c162f2ead4
 }
 /* iiiiiii */
 /* Warna navbar di desktop */
@@ -29,13 +33,17 @@ html {
 /* iiiiiii */
 @media (max-width: 768px) {
   html {
+<<<<<<< HEAD
     font-size: 70%; /* 11.2px */
+=======
+ 
+>>>>>>> 1261bff1f6af6a286b1fb908f860f1c162f2ead4
   }
 }
 
 @media (max-width: 576px) {
   html {
-    font-size: 60%; /* 9.6px */
+  
   }
   .nav-color {
     background-color: var(--white);
@@ -55,7 +63,7 @@ html {
 
 @media (max-width: 400px) {
   html {
-    font-size: 50%; /* 8px */
+
   }
   /* .nav-color {
     background-color: var(--white);
