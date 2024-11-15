@@ -102,7 +102,6 @@ body {
 
 /* hero */
 #hero {
-  /* background: linear-gradient(160deg, var(--primary), #000000); */
   height: 100vh;
   width: 100%;
   background-image: url("../img/jumbotron-bg.jpg");
@@ -110,8 +109,22 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  /* -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
-  mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0)); */
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Warna hitam dengan transparansi 50% */
+  z-index: 1; /* Agar overlay berada di atas background */
+}
+
+#hero > * {
+  position: relative;
+  z-index: 2; /* Konten di atas overlay */
 }
 
 .hero_tagline {
