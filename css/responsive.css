@@ -8,15 +8,6 @@
   --font-white: #ffffff;
   --font-black: #000000;
 }
-html {
-  font-size: 100%;
-}
-
-@media (max-width: 1200px) {
-}
-
-@media (max-width: 991px) {
-}
 
 @media (max-width: 768px) {
   .hero_tagline {
@@ -25,7 +16,13 @@ html {
 }
 
 @media (max-width: 576px) {
+  .hero_tagline {
+    text-align: center;
+  }
 }
 
 @media (max-width: 400px) {
+  .hero_tagline {
+    text-align: center;
+  }
 }
