@@ -73,7 +73,7 @@ body {
 }
 .navbar-brand {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 }
 .nav-link {
   font-size: 16px;
@@ -94,7 +94,7 @@ body {
 
   background-color: var(--primary);
   border: none;
-  /* font-size: 14px; */
+  /* font-size: 16px; */
   font-weight: 700;
   text-transform: capitalize;
   color: var(--font-white);
