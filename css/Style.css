@@ -71,6 +71,7 @@ body {
 .navbar.scrolled .navbar-brand,
 .navbar.scrolled .navbar-toggler-icon {
   color: black; /* Teks hitam saat di-scroll */
+  transition: background-color 0.3s, color 0.3s;
 }
 .navbar-brand {
   font-weight: 700;
