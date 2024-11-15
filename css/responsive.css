@@ -13,22 +13,29 @@ html {
 }
 
 @media (max-width: 1200px) {
+  html {
+    font-size: 90%; /* 14.4px */
+  }
 }
 
 @media (max-width: 992px) {
-
+  html {
+    font-size: 80%; /* 12.8px */
+  }
 }
 /* iiiiiii */
 /* Warna navbar di desktop */
 
 /* iiiiiii */
 @media (max-width: 768px) {
-
+  html {
+    font-size: 70%; /* 11.2px */
+  }
 }
 
 @media (max-width: 576px) {
   html {
-
+    font-size: 60%; /* 9.6px */
   }
   .nav-color {
     background-color: var(--white);
@@ -36,12 +43,19 @@ html {
     color: var(--font-black) !important;
   }
 
-
+  /* #hero {
+    height: 50vh;
+    width: 100%;
+  } */
+  /* .img-hero {
+    height: auto;
+    width: 100%;
+  } */
 }
 
 @media (max-width: 400px) {
   html {
-
+    font-size: 50%; /* 8px */
   }
   /* .nav-color {
     background-color: var(--white);
