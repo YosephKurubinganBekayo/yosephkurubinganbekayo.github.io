@@ -76,7 +76,7 @@ body {
   font-size: 24px;
 }
 .nav-link {
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 .button_primary {
   width: 133px;
@@ -121,7 +121,7 @@ body {
 .hero_tagline h1 {
   color: var(--font-white);
   font-weight: 700;
-  font-size: 36px;
+  /* font-size: 36px; */
   line-height: 50px;
 }
 /* #hero h1 span {
