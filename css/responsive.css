@@ -9,33 +9,23 @@
   --font-black: #000000;
 }
 html {
-  font-size: 100%; 
+  font-size: 100%;
 }
 
 @media (max-width: 1200px) {
-
 }
 
 @media (max-width: 991px) {
- 
-  .hero_tagline {
+}
 
+@media (max-width: 768px) {
+  .hero_tagline {
     text-align: center;
   }
 }
-/* iiiiiii */
-/* Warna navbar di desktop */
-
-/* iiiiiii */
-@media (max-width: 768px) {
-
-}
 
 @media (max-width: 576px) {
- 
-
 }
 
 @media (max-width: 400px) {
-
 }
