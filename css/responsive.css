@@ -9,8 +9,12 @@
   --font-black: #000000;
 }
 @media (max-width: 991.98px) {
-  .navbar-collapse {
-    margin-bottom: 30px; /* Jarak bawah keseluruhan saat navigasi aktif */
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+  }
+  .login-button {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
   }
 
   .navbar-nav .nav-link {
@@ -28,7 +32,7 @@
   .library-info {
     margin-top: 20px;
     padding-top: 10px !important;
-    border-top: 1px solid #dee2e6; 
+    border-top: 1px solid #dee2e6;
   }
 }
 

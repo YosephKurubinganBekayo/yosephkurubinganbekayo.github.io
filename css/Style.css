@@ -56,22 +56,25 @@ body {
 } */
 .navbar {
   text-transform: capitalize;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease 0s;
   z-index: 4;
 }
 
 .navbar.bg-transparent {
   background-color: rgba(0, 0, 0, 0.75) !important; /* Hitam transparan */
   color: white;
+  transition: all 0.3s ease 0s;
 }
 .navbar.scrolled {
-  background-color: white !important; /* Warna putih saat di-scroll */
+  background-color: white !important; 
+  transition: box-shadow 0.3s ease-in-out;
+  /* Warna putih saat di-scroll */
 }
 .navbar.scrolled .nav-link,
 .navbar.scrolled .navbar-brand,
 .navbar.scrolled .navbar-toggler-icon {
   color: black; /* Teks hitam saat di-scroll */
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease 0s;
 }
 .navbar-brand {
   font-weight: 700;
@@ -79,7 +82,7 @@ body {
 }
 .nav-link {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 .button_primary {
   padding: 50px 20px;
@@ -95,8 +98,7 @@ body {
 
   background-color: var(--primary);
   border: none;
-  /* font-size: 16px; */
-  font-weight: 700;
+  font-weight: 600;
   text-transform: capitalize;
   color: var(--font-white);
 }
@@ -156,7 +158,6 @@ body {
   color: var(--primary);
   border: none;
   border-radius: 3px;
-  /* font-size: 20px; */
   font-weight: 700;
 }
 .button-lg-primary:hover {
@@ -172,6 +173,7 @@ body {
   height: 400px;
   width: auto;
 }
+
 /* contact */
 #contact {
   background-size: cover;
@@ -185,15 +187,11 @@ body {
 }
 #contact h3 {
   font-weight: 400;
-  /* font-size: 24px; */
   line-height: 50px;
   color: var(--font-white);
-  /* display: inline-block; */
-  /* width: 500px; */
 }
 #contact h4 {
   font-weight: 400;
-  /* font-size: 20px; */
   line-height: 50px;
   color: var(--primary);
   text-align: center;
@@ -207,14 +205,12 @@ body {
 }
 .kontak a {
   font-weight: normal;
-  /* font-size: 14px; */
   line-height: 20px;
   color: var(--font-white);
   text-decoration: none;
 }
 .social-icons a {
-  color: var(--font-white); /* Warna ikon */
-  /* font-size: 1.5em; Ukuran ikon */
+  color: var(--font-white);
   text-decoration: none;
 }
 .form-control {
@@ -222,11 +218,10 @@ body {
 }
 
 .social-icons a:hover {
-  color: var(--primary); /* Warna saat ikon di-hover */
+  color: var(--primary);
 }
 .card-contact {
   width: 100%;
-  /* height: 470px; */
   background-color: #ffffff;
   border-radius: 5px;
   padding: 40px 40px;
@@ -241,15 +236,12 @@ body {
   border-radius: 3px;
   color: var(--font-white);
   font-weight: 400;
-  /* font-size: 18px; */
 }
 .gmap {
   padding-top: 50px;
 }
 /* layanan */
-/* Layanan section */
 #layanan {
-  /* background-color: var(--white); */
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -257,10 +249,8 @@ body {
 #layanan h2 {
   margin-top: 20px;
   text-align: center;
-  /* font-size: 24px; */
   font-weight: 400;
   margin-bottom: 20px;
-  /* background-color: var(--font-black); */
 }
 
 .service-navigation {
@@ -304,12 +294,9 @@ body {
 }
 
 .library-title {
-  /* font-size: 18px; */
   color: var(--primary);
   padding-bottom: 15px;
 }
-
-
 
 .closed-info {
   background-color: #ffeeba;
