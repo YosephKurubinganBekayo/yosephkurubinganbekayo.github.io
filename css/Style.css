@@ -134,21 +134,23 @@ body {
   margin-bottom: 60px;
   margin-top: 20px;
   line-height: 30px;
-  width: 85%;
 }
 .button-lg-primary {
-  width: 237px;
-  height: 50px;
+  padding: 10px 30px;
+
   background-color: #ffffff;
   color: var(--primary);
   border: none;
+  border-radius: 3px;
   /* font-size: 20px; */
   font-weight: 700;
 }
-/* .button-lg-primary_titel {
-  color: var(--primary);
-  text-decoration: none;
-} */
+.button-lg-primary:hover {
+  padding: 10px 30px;
+
+  background-color: var(--primary);
+  color: var(--font-white);
+}
 
 /* about section */
 
@@ -158,8 +160,6 @@ body {
 }
 /* contact */
 #contact {
-  /* background-image: url(../img/jumbotron-bg.jpg); */
-  /* background: linear-gradient(160deg, var(--primary), var(--primary)); */
   background-size: cover;
   background-repeat: no-repeat;
 }

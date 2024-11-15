@@ -17,8 +17,12 @@ html {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   html {
+  }
+  .hero_tagline {
+
+    text-align: center;
   }
 }
 /* iiiiiii */
