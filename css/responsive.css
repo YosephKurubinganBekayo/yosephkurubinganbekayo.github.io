@@ -8,7 +8,19 @@
   --font-white: #ffffff;
   --font-black: #000000;
 }
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    margin-bottom: 30px; /* Jarak bawah keseluruhan saat navigasi aktif */
+  }
 
+  .navbar-nav .nav-link {
+    margin-bottom: 10px; /* Jarak antar tombol menu */
+  }
+
+  .navbar-nav .dropdown-menu {
+    margin-top: 10px; /* Jarak tambahan untuk dropdown */
+  }
+}
 @media (max-width: 768px) {
   .hero_tagline {
     text-align: center;
