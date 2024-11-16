@@ -240,18 +240,17 @@ body {
 }
 /* layanan */
 #layanan {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .header-layanan {
   background-color: var(--white);
 }
 
 #layanan h2 {
-  margin-top: 20px;
   text-align: center;
   font-weight: 400;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 
   padding: 10px 0;
 }
@@ -260,15 +259,13 @@ body {
   font-weight: 400;
   margin-bottom: 20px;
 
-  padding: 10px 10px;
+  padding: 0 10px;
 }
 
 .service-navigation {
   display: flex;
   justify-content: space-evenly;
   padding: 5px;
-  background-color: var(--white);
-  border-radius: 3px;
   margin-bottom: 15px;
 }
 
@@ -283,10 +280,10 @@ body {
   padding: 10px 15px;
   margin: 0 5px;
   cursor: pointer;
-  /* font-size: 16px; */
   transition: all 0.2s ease-in;
   background-color: transparent;
   font-weight: 700;
+  border-radius: 3px;
 }
 
 .service-navigation button:hover {
