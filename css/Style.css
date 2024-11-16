@@ -130,6 +130,7 @@ body {
 .hero_tagline {
   position: relative;
   z-index: 3;
+  text-align: center;
 }
 
 .hero_tagline h1 {
