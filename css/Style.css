@@ -26,8 +26,6 @@ body {
   color: var(--font-black);
 }
 
-/* Awal animasi */
-
 /* Animasi dasar */
 @keyframes fadeSlideIn {
   0% {
