@@ -30,27 +30,22 @@ window.addEventListener("scroll", handleScroll);
 
 // Event listener untuk toggler klik
 toggler.addEventListener("click", handleToggle);
+// Pilih semua elemen dropdown di navbar
+const dropdownElements = document.querySelectorAll(".navbar .dropdown");
 
-function showService(service) {
-  const perpustakaanSection = document.getElementById("perpustakaan");
-  const kearsipanSection = document.getElementById("kearsipan");
+// Tambahkan event listener untuk setiap elemen dropdown
+dropdownElements.forEach((dropdown) => {
+  const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
+  const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+  const bootstrapDropdown = new bootstrap.Dropdown(dropdownToggle);
 
-  // Menampilkan atau menyembunyikan bagian berdasarkan layanan yang dipilih
-  if (service === "perpustakaan") {
-    perpustakaanSection.style.display = "flex"; // Tampilkan bagian perpustakaan
-    kearsipanSection.style.display = "none"; // Sembunyikan bagian kearsipan
-  } else if (service === "kearsipan") {
-    perpustakaanSection.style.display = "none"; // Sembunyikan bagian perpustakaan
-    kearsipanSection.style.display = "flex"; // Tampilkan bagian kearsipan
-  }
+  // Tampilkan dropdown saat kursor masuk ke elemen dropdown
+  dropdown.addEventListener("mouseenter", function () {
+    bootstrapDropdown.show();
+  });
 
-  // Menambahkan kelas 'active' pada tombol yang ditekan
-  const buttons = document.querySelectorAll(".service-navigation button");
-  buttons.forEach((button) => button.classList.remove("active"));
-  const activeButton = document.querySelector(
-    `button[onclick="showService('${service}')"]`
-  );
-  if (activeButton) {
-    activeButton.classList.add("active");
-  }
-}
+  // Sembunyikan dropdown saat kursor meninggalkan elemen dropdown
+  dropdown.addEventListener("mouseleave", function () {
+    bootstrapDropdown.hide();
+  });
+});
