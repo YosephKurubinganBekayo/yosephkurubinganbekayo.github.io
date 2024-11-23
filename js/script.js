@@ -56,6 +56,18 @@ dropdownElements.forEach((dropdown) => {
       bootstrapDropdown.hide();
     }
   });
+
+  // Tambahkan event listener untuk mencegah dropdown menutup saat di klik di desktop
+  dropdownToggle.addEventListener("click", function (event) {
+    if (isDesktop()) {
+      event.preventDefault(); // Mencegah aksi default yang menutup dropdown
+      if (dropdown.classList.contains("show")) {
+        bootstrapDropdown.hide();
+      } else {
+        bootstrapDropdown.show();
+      }
+    }
+  });
 });
 
 // Menambahkan event listener untuk perubahan ukuran layar
