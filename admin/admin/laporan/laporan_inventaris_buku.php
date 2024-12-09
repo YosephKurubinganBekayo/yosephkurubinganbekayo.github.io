@@ -110,6 +110,7 @@ if (!isset($_GET['tab'])) {
                                     <tr>
                                         <th>No</th>
                                         <th>Tanggal Terima</th>
+                                        <th>id</th>
                                         <th>No Induk</th>
                                         <th>Judul Buku</th>
                                         <th>Pengarang</th>
@@ -158,6 +159,7 @@ if (!isset($_GET['tab'])) {
                                     if (!empty($keterangan)) {
                                         $sql .= " AND keterangan LIKE '%$keterangan%'";
                                     }
+                                    $sql .= " ORDER BY id_buku ASC";
 
                                     $query = $koneksi->query($sql);
 
@@ -166,6 +168,7 @@ if (!isset($_GET['tab'])) {
                                         <tr>
                                             <td><?php echo $no++; ?></td>
                                             <td><?php echo $data['tanggal_terima']; ?></td>
+                                            <td><?php echo $data['id_buku']; ?></td>
                                             <td><?php echo $data['no_induk']; ?></td>
                                             <td><?php echo $data['judul_buku']; ?></td>
                                             <td><?php echo $data['pengarang']; ?></td>

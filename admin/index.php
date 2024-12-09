@@ -13,7 +13,41 @@ if (isset($_SESSION["ses_username"]) == "") {
 //KONEKSI DB
 include "../call_fungtion.php";
 ?>
+<?php
+// Mulai session atau cek koneksi
 
+// Jika ada permintaan data dengan ajax
+if (isset($_GET['tanggal_terima'])) {
+    $tanggal_terima = $_GET['tanggal_terima'];
+    $tahun = substr($tanggal_terima, 2, 2); // Ambil dua digit terakhir tahun dari tanggal_terima
+
+    // Query untuk mencari nomor induk terakhir berdasarkan tahun
+    $query_tahun = "SELECT no_induk FROM buku WHERE no_induk LIKE '%/Dinarpusta/$tahun' ORDER BY id_buku DESC LIMIT 1";
+    $result_tahun = mysqli_query($koneksi, $query_tahun);
+    $data_tahun = mysqli_fetch_array($result_tahun);
+
+    if ($data_tahun) {
+        // Jika sudah ada data di tahun tersebut, ambil nomor urut terakhir dan tambahkan 1
+        $no_urut_terakhir = (int)substr($data_tahun['no_induk'], 0, 3); // Ambil 3 digit pertama
+        $no_urut_baru = $no_urut_terakhir + 1;
+    } else {
+        // Jika belum ada data untuk tahun tersebut, mulai dari 1
+        $no_urut_baru = 1;
+    }
+
+    // Format nomor urut menjadi 3 digit
+    $no_urut_format = str_pad($no_urut_baru, 3, '0', STR_PAD_LEFT);
+    $no_induk_baru = "$no_urut_format/Dinarpusta/$tahun";
+    $id_buku_baru = $no_urut_format;
+
+    // Mengembalikan data dalam format JSON
+    echo json_encode([
+        'id_buku_baru' => $id_buku_baru,
+        'no_induk_baru' => $no_induk_baru
+    ]);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -469,6 +503,9 @@ include "../call_fungtion.php";
 							//buku
 						case 'MyApp/data_buku':
 							include "admin/buku/data_buku.php";
+							break;
+						case 'MyApp/add_buku_baru':
+							include "admin/buku/add_buku_baru.php";
 							break;
 						case 'MyApp/add_buku':
 							include "admin/buku/add_buku.php";

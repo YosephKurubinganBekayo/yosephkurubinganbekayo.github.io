@@ -63,7 +63,7 @@ if ($datakode) {
 
                                 <div class="form-group">
                                     <label>No Induk</label>
-                                    <input type="text" name="no_induk" id="no_induk" class="form-control" placeholder="id/dinarspus/tahun" readonly>
+                                    <input type="text" name="no_induk" id="no_induk" class="form-control" placeholder="id/Dinarpusta/tahun" readonly>
                                 </div>
 
                                 <div class="form-group">

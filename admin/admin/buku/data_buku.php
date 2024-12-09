@@ -11,6 +11,7 @@
                 <i class="glyphicon glyphicon-plus"></i> Tambah Data
             </a>
 
+
             <!-- Tombol untuk membuka modal filter -->
             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#filterModal">
                 Filter Data
@@ -18,6 +19,9 @@
             <!-- Tombol Hapus Filter -->
             <a href="?page=MyApp/data_buku" class="btn btn-warning">
                 Hapus Filter
+            </a>
+            <a href="?page=MyApp/add_buku_baru" title="Tambah Data" class="btn btn-primary">
+                <i class="glyphicon glyphicon-plus"></i> Data Baru
             </a>
         </div>
 
@@ -72,6 +76,14 @@
                                 <label for="keterangan">Keterangan</label>
                                 <input type="text" name="keterangan" class="form-control" placeholder="Keterangan" value="<?php echo isset($_GET['keterangan']) ? $_GET['keterangan'] : ''; ?>">
                             </div>
+                            <div class="form-group">
+                                <label for="jmlh">Jumlah Data Ditampilkan</label>
+                                <select name="jmlh" class="form-control" onchange="this.form.submit()">
+                                    <option value="" <?php echo (isset($_GET['jmlh']) && $_GET['jmlh'] == '') ? 'selected' : ''; ?>>10 Data</option>
+                                    <option value="all" <?php echo (isset($_GET['jmlh']) && $_GET['jmlh'] == 'all') ? 'selected' : ''; ?>>Semua Data</option>
+                                </select>
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -90,7 +102,6 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>ID</th>
                             <th>Tanggal Terima</th>
                             <th>No Induk</th>
                             <th>Judul Buku</th>
@@ -114,6 +125,7 @@
                         $no_kelas = isset($_GET['no_kelas']) ? $_GET['no_kelas'] : '';
                         $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : '';
                         $keterangan = isset($_GET['keterangan']) ? $_GET['keterangan'] : '';
+                        $data_per_halaman = isset($_GET['jmlh'])  ? $_GET['jmlh'] : '';
 
                         // Membuat query dasar
                         $sql = "SELECT * FROM buku WHERE 1=1";
@@ -139,16 +151,21 @@
                             $sql .= " AND jenis = '$jenis'";
                         }
                         if (!empty($keterangan)) {
-                            $sql .= " AND keterangan LIKE '%$keterangan%'";
+                            $sql .= " AND keterangan LIKE '%$keterangan%' ";
                         }
-
+                        $sql .= " ORDER BY tanggal_terima DESC, id_buku DESC";
+                        if (!empty($data_per_halaman)) {
+                            $sql .= "";
+                        } else {
+                            $data_per_halaman = 10;
+                            $sql .= " LIMIT $data_per_halaman ";
+                        }
                         $query = $koneksi->query($sql);
 
                         while ($data = $query->fetch_assoc()) {
                         ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td><?php echo $data['id_buku']; ?></td>
                                 <td><?php echo $data['tanggal_terima']; ?></td>
                                 <td><?php echo $data['no_induk']; ?></td>
                                 <td><?php echo $data['judul_buku']; ?></td>
