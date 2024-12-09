@@ -516,26 +516,7 @@ if (isset($_GET['tanggal_terima'])) {
 						case 'MyApp/del_buku':
 							include "admin/buku/del_buku.php";
 							break;
-							//sirkul
-						case 'data_sirkul':
-							include "admin/sirkul/data_sirkul.php";
-							break;
-						case 'add_sirkul':
-							include "admin/sirkul/add_sirkul.php";
-							break;
-						case 'panjang':
-							include "admin/sirkul/panjang.php";
-							break;
-						case 'kembali':
-							include "admin/sirkul/kembali.php";
-							break;
-							//log
-						case 'log_pinjam':
-							include "admin/log/log_pinjam.php";
-							break;
-						case 'log_kembali':
-							include "admin/log/log_kembali.php";
-							break;
+						
 							//laporan
 						case 'laporan_inventaris_buku':
 							include "admin/laporan/laporan_inventaris_buku.php";
