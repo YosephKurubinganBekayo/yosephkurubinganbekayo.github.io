@@ -143,7 +143,7 @@ if ($datakode) {
         const tahun = tanggalTerima ? tanggalTerima.split('-')[0].slice(-2) : ''; // Ambil tahun dari Tanggal Terima
 
         // Format No Induk sebagai "id/dinarspus/tahun"
-        const noInduk = tahun ? `${idBuku}/dinarspus/${tahun}` : '';
+        const noInduk = tahun ? `${idBuku}/Dinarpusta/${tahun}` : '';
 
         // Update nilai di kolom No Induk
         document.getElementById('no_induk').value = noInduk;

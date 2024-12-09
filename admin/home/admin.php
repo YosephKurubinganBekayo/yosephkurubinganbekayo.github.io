@@ -6,35 +6,19 @@ while ($data = $sql->fetch_assoc()) {
 ?>
 
 <?php
-$sql = $koneksi->query("SELECT count(id_anggota) as agt from tb_anggota");
+$sql = $koneksi->query("SELECT count(id) as layanan from layanan");
 while ($data = $sql->fetch_assoc()) {
-    $agt = $data['agt'];
+    $layanan = $data['layanan'];
 }
 ?>
-
 <?php
-$sql = $koneksi->query("SELECT count(id_sk) as pin from tb_sirkulasi where status='PIN'");
+$sql = $koneksi->query("SELECT count(id) as blogs from kegiatan");
 while ($data = $sql->fetch_assoc()) {
-
-    $pin = $data['pin'];
+    $blogs = $data['blogs'];
 }
 ?>
 
-<?php
-$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_sirkulasi where status='KEM'");
-while ($data = $sql->fetch_assoc()) {
 
-    $kem = $data['kem'];
-}
-?>
-
-<?php
-$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_sirkulasi where status='KEM'");
-while ($data = $sql->fetch_assoc()) {
-
-    $kem = $data['kem'];
-}
-?>
 
 
 <!-- Content Header (Page header) -->
@@ -51,15 +35,51 @@ while ($data = $sql->fetch_assoc()) {
 
             <div class="row ">
 
-                <div class="col-lg-3 col-xs-6">
+                <div class="col-lg-4 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-blue">
+                    <div class="small-box bg-green">
                         <div class="inner">
                             <h4>
                                 <?= $buku; ?>
                             </h4>
 
                             <p>Buku</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="?page=MyApp/data_buku" class="small-box-footer">More info
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h4>
+                                <?= $layanan; ?>
+                            </h4>
+
+                            <p>Layanan</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="?page=MyApp/data_buku" class="small-box-footer">More info
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h4>
+                                <?= $blogs; ?>
+                            </h4>
+
+                            <p>Blog & Artikel</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
@@ -181,8 +201,7 @@ while ($data = $sql->fetch_assoc()) {
 
 
         </div>
-</section>
-<section class="content">
+
     <div class="row">
         <div class="col-md-12">
             <div class="box box-info">
