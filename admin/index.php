@@ -199,6 +199,26 @@ include "inc/koneksi.php";
 						<li class="treeview">
 							<a href="#">
 								<i class="fa fa-folder"></i>
+								<span>Kelola Data</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+
+								<li>
+									<a href="?page=MyApp/data_buku">
+										<i class="fa fa-book"></i>Data inventaris Buku</a>
+								</li>
+								<!-- <li>
+									<a href="?page=MyApp/data_agt">
+										<i class="fa fa-users"></i>Data Anggota</a>
+								</li> -->
+							</ul>
+						</li>
+						<!-- <li class="treeview">
+							<a href="#">
+								<i class="fa fa-folder"></i>
 								<span>Perpustakaan</span>
 								<span class="pull-right-container">
 									<i class="fa fa-angle-left pull-right"></i>
@@ -273,16 +293,16 @@ include "inc/koneksi.php";
 									</ul>
 								</li>
 							</ul>
-						</li>
-						<li class="treeview">
+						</li> -->
+						<!-- <li class="treeview">
 							<a href="?page=data_sirkul">
 								<i class="fa fa-refresh"></i>
 								<span>Sirkulasi</span>
 								<span class="pull-right-container">
 								</span>
 							</a>
-						</li>
-						<li class="treeview">
+						</li> -->
+						<!-- <li class="treeview">
 							<a href="#">
 								<i class="fa fa-book"></i>
 								<span>Kepegawaian</span>
@@ -306,8 +326,8 @@ include "inc/koneksi.php";
 										<i class="fa fa-"></i>Data Pegawai</a>
 								</li>
 							</ul>
-						</li>
-						<!-- <li class="treeview">
+						</li> -->
+						<li class="treeview">
 							<a href="#">
 								<i class="fa fa-print"></i>
 								<span>Laporan</span>
@@ -316,16 +336,16 @@ include "inc/koneksi.php";
 								</span>
 							</a>
 							<ul class="treeview-menu">
-								<li>
+								<!-- <li>
 									<a href="?page=laporan_sirkulasi">
 										<i class="fa fa-file"></i>Laporan Sirkulasi</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="?page=laporan_inventaris_buku">
 										<i class="fa fa-file"></i>Laporan Inventaris Buku</a>
 								</li>
 							</ul>
-						</li> -->
+						</li>
 						<li class="header">SETTING</li>
 						<li class="treeview">
 							<a href="?page=MyApp/data_pengguna">
@@ -337,6 +357,25 @@ include "inc/koneksi.php";
 						</li>
 						<li class="treeview">
 							<a href="#">
+								<i class="fa fa-"></i>
+								<span>Data Instansi</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="?page=MyApp/data_departemen">
+										<i class="fa fa-"></i>Data Depatemen</a>
+								</li>
+								<li>
+									<a href="?page=MyApp/data_bidang">
+										<i class="fa fa-"></i>Data Bidang</a>
+								</li>
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
 								<i class="fa fa-home"></i>
 								<span>Profil Website</span>
 								<span class="pull-right-container">
@@ -344,6 +383,7 @@ include "inc/koneksi.php";
 								</span>
 							</a>
 							<ul class="treeview-menu">
+
 								<li>
 									<a href="?page=MyApp/profile_dinas">
 										<i class="fa fa-profile"></i>Profil Instansi</a>
@@ -373,7 +413,7 @@ include "inc/koneksi.php";
 								</li>
 								<li>
 									<a href="?page=MyApp/kegiatan">
-										<i class="fa fa-activity"></i>Kegiatan</a>
+										<i class="fa fa-activity"></i>Blog & Artikel</a>
 								</li>
 							</ul>
 						</li>
@@ -413,7 +453,6 @@ include "inc/koneksi.php";
 								</li>
 							</ul>
 						</li>
-
 						<li class="treeview">
 							<a href="?page=data_sirkul">
 								<i class="fa fa-refresh"></i>
@@ -477,8 +516,6 @@ include "inc/koneksi.php";
 							<span class="pull-right-container"></span>
 						</a>
 					</li>
-
-
 			</section>
 			<!-- /.sidebar -->
 		</aside>
@@ -494,7 +531,6 @@ include "inc/koneksi.php";
 				<?php
 				if (isset($_GET['page'])) {
 					$hal = $_GET['page'];
-
 					switch ($hal) {
 							//Klik Halaman Home Pengguna
 						case 'admin':
@@ -525,38 +561,6 @@ include "inc/koneksi.php";
 							break;
 						case 'MyApp/del_pengguna':
 							include "admin/pengguna/del_pengguna.php";
-							break;
-							//pengunjung
-						case 'MyApp/data_kunjungan':
-							include "admin/Pengunjung/data_kunjungan.php";
-							break;
-						case 'MyApp/add_kunjungan':
-							include "admin/pengunjung/add_kunjungan.php";
-							break;
-						case 'MyApp/edit_kunjungan':
-							include "admin/pengunjung/edit_kunjungan.php";
-							break;
-						case 'MyApp/del_kunjungan':
-							include "admin/pengunjung/del_kunjungan.php";
-							break;
-							//agt
-						case 'MyApp/data_K':
-							include "admin/agt/data_agt.php";
-							break;
-						case 'MyApp/add_agt':
-							include "admin/agt/add_agt.php";
-							break;
-						case 'MyApp/edit_agt':
-							include "admin/agt/edit_agt.php";
-							break;
-						case 'MyApp/del_agt':
-							include "admin/agt/del_agt.php";
-							break;
-						case 'MyApp/print_agt':
-							include "admin/agt/print_agt.php";
-							break;
-						case 'MyApp/print_allagt':
-							include "admin/agt/print_allagt.php";
 							break;
 							// pegawai
 						case 'MyApp/data_pegawai':
@@ -597,12 +601,6 @@ include "inc/koneksi.php";
 						case 'MyApp/del_bidang':
 							include "admin/bidang/del_bidang.php";
 							break;
-							// case 'MyApp/print_agt':
-							// 	include "admin/agt/print_agt.php";
-							// 	break;
-							// case 'MyApp/print_allagt':
-							// 	include "admin/agt/print_allagt.php";
-							// 	break;
 							//buku
 						case 'MyApp/data_buku':
 							include "admin/buku/data_buku.php";
@@ -637,9 +635,6 @@ include "inc/koneksi.php";
 							include "admin/log/log_kembali.php";
 							break;
 							//laporan
-						case 'laporan_sirkulasi':
-							include "admin/laporan/laporan_sirkulasi.php";
-							break;
 						case 'laporan_inventaris_buku':
 							include "admin/laporan/laporan_inventaris_buku.php";
 							break;
@@ -789,7 +784,6 @@ include "inc/koneksi.php";
 					"ordering": false,
 					// "info": true,
 					"autoWidth": false
-
 				});
 				$(document).ready(function() {
 					// Inisialisasi DataTable

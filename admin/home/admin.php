@@ -39,7 +39,6 @@ while ($data = $sql->fetch_assoc()) {
 
 <!-- Content Header (Page header) -->
 
-
 <!-- Main content -->
 <section class="content">
     <!-- Small boxes (Stat box) -->
@@ -66,63 +65,6 @@ while ($data = $sql->fetch_assoc()) {
                             <i class="ion ion-stats-bars"></i>
                         </div>
                         <a href="?page=MyApp/data_buku" class="small-box-footer">More info
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h4>
-                                <?= $agt; ?>
-                            </h4>
-
-                            <p>Anggota</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="?page=MyApp/data_agt" class="small-box-footer">More info
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h4>
-                                <?= $pin; ?>
-                            </h4>
-
-                            <p>Sirkulasi yang sedang berjalan</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="?page=data_sirkul" class="small-box-footer">More info
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-red">
-                        <div class="inner">
-                            <h4>
-                                <?= $kem; ?>
-                            </h4>
-
-                            <p>Laporan Sirkulasi</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="?page=log_kembali" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -186,12 +128,7 @@ while ($data = $sql->fetch_assoc()) {
             <!-- Tombol Filter dan Hapus Filter -->
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-right mb-3">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#filterModal_kelas">Filter</button>
-                        <?php if ($bulanFilter || $tahunFilter || $jenisFilter) : ?>
-                            <a href="index.php?page=admin" class="btn btn-danger">Hapus Filter</a>
-                        <?php endif; ?>
-                    </div>
+
                 </div>
             </div>
 
@@ -247,26 +184,23 @@ while ($data = $sql->fetch_assoc()) {
 </section>
 <section class="content">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="text-center">Grafik Data Buku</h3>
+                    <h3 class="text-center">Grafik Data Inventaris Buku</h3>
+                </div>
+                <div class="text-right mb-3" style="padding: 20px;">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#filterModal_kelas">Filter Data</button>
+                    <?php if ($bulanFilter || $tahunFilter || $jenisFilter) : ?>
+                        <a href="index.php?page=admin" class="btn btn-danger">Hapus Filter</a>
+                    <?php endif; ?>
                 </div>
                 <div class="box-body">
-                    <canvas id="barChart" width="400" height="200"></canvas>
+                    <canvas id="barChart" width="300" height="100"></canvas>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 ">
-            <div class="box box-info h-100">
-                <div class="box-header with-border">
-                    <h3 class="text-center"> Grafik Kedua</h3>
-                </div>
-                <div class="box-body">
-                    <canvas id="secondChart" width="400" height="200"></canvas>
-                </div>
-            </div>
-        </div>
+
     </div>
     <script>
         const kelasData = <?php echo json_encode($kelasData); ?>;
@@ -305,183 +239,6 @@ while ($data = $sql->fetch_assoc()) {
                 }
             }
         });
-        // Data dan konfigurasi untuk grafik kedua (misalnya diagram lingkaran)
-        const ctx2 = document.getElementById('secondChart').getContext('2d');
-
-        // Hitung total jumlah data
-        const totalData = jumlahData.reduce((acc, value) => acc + value, 0);
-
-        // Konversi nilai mentah ke dalam bentuk persentase
-        const percentageData = jumlahData.map(value => ((value / totalData) * 100).toFixed(2));
-
-        const secondChart = new Chart(ctx2, {
-            type: 'pie',
-            data: {
-                labels: kelasData, // Label kategori
-                datasets: [{
-                    label: 'Distribusi Buku (%)',
-                    data: percentageData, // Data dalam bentuk persentase
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(153, 102, 255, 0.6)',
-                        'rgba(255, 159, 64, 0.6)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false // Menyembunyikan legenda
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                // Ambil persentase dari data
-                                const percentage = percentageData[tooltipItem.dataIndex];
-                                return `${tooltipItem.label}: ${percentage}%`; // Format tooltip dengan persentase
-                            }
-                        }
-                    }
-                }
-            }
-        });
     </script>
-    <div class="row">
-        <!-- Grafik Buku Terpopuler -->
-        <div class="col-md-6">
-            <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Grafik Buku Terpopuler</h3>
-                </div>
-                <div class="box-body">
-                    <canvas id="chartBuku"></canvas>
-                </div>
-            </div>
-        </div>
 
-        <!-- Grafik Anggota Teraktif -->
-        <div class="col-md-6">
-            <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Grafik Anggota Teraktif</h3>
-                </div>
-                <div class="box-body">
-                    <canvas id="chartAnggota"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
-
-<script>
-    // Data Buku Terpopuler
-    <?php
-    $labelsBuku = [];
-    $dataBuku = [];
-    $query_buku_populer = $koneksi->query("
-        SELECT b.judul_buku, COUNT(s.id_buku) as jumlah_peminjaman
-        FROM buku b
-        JOIN log_pinjam s ON b.no_induk = s.id_buku
-        GROUP BY s.id_buku
-        ORDER BY jumlah_peminjaman DESC
-        LIMIT 10
-    ");
-    while ($row = $query_buku_populer->fetch_assoc()) {
-        $labelsBuku[] = $row['judul_buku'];
-        $dataBuku[] = $row['jumlah_peminjaman'];
-    }
-    ?>
-    const labelsBuku = <?= json_encode($labelsBuku); ?>;
-    const dataBuku = <?= json_encode($dataBuku); ?>;
-
-    // Data Anggota Teraktif
-    <?php
-    $labelsAnggota = [];
-    $dataAnggota = [];
-    $query_anggota_aktif = $koneksi->query("
-        SELECT a.nama, COUNT(s.id_anggota) as jumlah_peminjaman
-        FROM tb_anggota a
-        JOIN log_pinjam s ON a.id_anggota = s.id_anggota
-        GROUP BY s.id_anggota
-        ORDER BY jumlah_peminjaman DESC
-        LIMIT 10
-    ");
-    while ($row = $query_anggota_aktif->fetch_assoc()) {
-        $labelsAnggota[] = $row['nama'];
-        $dataAnggota[] = $row['jumlah_peminjaman'];
-    }
-    ?>
-    const labelsAnggota = <?= json_encode($labelsAnggota); ?>;
-    const dataAnggota = <?= json_encode($dataAnggota); ?>;
-
-    // Chart Buku Terpopuler
-    const ctxBuku = document.getElementById('chartBuku').getContext('2d');
-    new Chart(ctxBuku, {
-        type: 'bar',
-        data: {
-            labels: labelsBuku,
-            datasets: [{
-                label: 'Jumlah Peminjaman',
-                data: dataBuku,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Chart Anggota Teraktif
-    const ctxAnggota = document.getElementById('chartAnggota').getContext('2d');
-    new Chart(ctxAnggota, {
-        type: 'bar',
-        data: {
-            labels: labelsAnggota,
-            datasets: [{
-                label: 'Jumlah Peminjaman',
-                data: dataAnggota,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>

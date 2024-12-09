@@ -15,11 +15,6 @@
     echo "<title>Nama website</title>";
   }
   ?>
-  <!-- <meta name="description" content="$showprofile[description]">
-            <meta name="keywords" content="$showprofile[keywords]">
-            <meta http-equiv="copyright" content="$showprofile[copyright]">
-            <meta name="author" content="$showprofile[author]">
-            <link rel="shortcut icon" href="img/$showprofile[icon]" />"; -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="<?php echo $profile['keywords'] ?>" name="keywords" />
   <meta name="author" content="<?php echo $profile['copyright'] ?>">
