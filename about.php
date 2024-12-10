@@ -7,7 +7,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if ($id > 0) {
     // Query data berdasarkan ID dengan MySQLi
-    $stmt = $koneksi->prepare("SELECT title_aboutus, detail_aboutus, pict_aboutus FROM tbl_aboutus WHERE id_aboutus = ?");
+    $stmt = $koneksi->prepare("SELECT * FROM tbl_aboutus WHERE id_aboutus = ?");
 
     if ($stmt) {
         $stmt->bind_param("i", $id); // Bind parameter ID sebagai integer
@@ -77,24 +77,26 @@ if ($id > 0) {
     <!-- Abaout Start -->
     <div id="about" class="container-fluid about py-5 ">
         <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <!-- <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s"> -->
-                <div>
-                    <?php echo $detail; ?>
-                    <!-- <div class="row g-4">
-                            <div class="col-sm-6">
-                                <a href="about.html" class="btn btn-secondary rounded-end rounded-top py-2 px-5 flex-shrink-0">Selengkapnya</a>
-                            </div>
-                        </div> -->
-                </div>
-                <!-- </div> -->
-                <!-- <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
-                    <div class="rounded-start rounded-bottom position-relative overflow-hidden">
-                        <img src="img/<?php echo $image; ?>" class="img-fluid" style="width: 100%; height: 400px; object-fit: cover; " alt="" />
+            <?php
+            $gambar_di_detail = ambil_gambar($id);
+            if (!empty($gambar_di_detail)) { ?>
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-12 wow fadeInLeft" data-wow-delay="0.2s">
+                        <?php echo ambil_isi($id); ?>
+                    <?php } else {
+                    echo $detail;
+                } ?>
                     </div>
-
-                </div> -->
-            </div>
+                </div>
+                <?php
+                $gambar_di_detail = ambil_gambar($id);
+                if (!empty($gambar_di_detail)) { ?>
+                    <div class="col-xl-12 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="rounded-start rounded-bottom position-center overflow-hidden d-flex justify-content-center">
+                            <img src="<?php echo ambil_gambar($id)?>" class="img-fluid align-items-center"  alt="" />
+                        </div>
+                    </div>
+                <?php } ?>
         </div>
     </div>
     <!-- About End -->
@@ -102,7 +104,7 @@ if ($id > 0) {
     <?php include "footer.php" ?>
     <!-- Footer End -->
     <!-- Copyright Start -->
-    
+
     <!-- Copyright End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>

@@ -328,7 +328,7 @@ include "../call_fungtion.php";
 					?>
 
 						<li class="treeview">
-							<a href="?page=admin">
+							<a href="?page=petugas">
 								<i class="fa fa-dashboard"></i>
 								<span>Dashboard</span>
 								<span class="pull-right-container">
@@ -625,10 +625,67 @@ include "../call_fungtion.php";
 		</script>
 		<!-- script_summernote -->
 		<script>
-			$('#summernote').summernote({
-				tabsize: 2,
-				height: 200,
+			$(document).ready(function() {
+				$('#summernote').summernote({
+					callbacks: {
+						onImageUpload: function(files) {
+							for (let i = 0; i < files.length; i++) {
+								$.upload(files[i]);
+							}
+						},
+						onMediaDelete: function(target) {
+							var gambarUrl = target[0].src; // Mengambil URL gambar yang akan dihapus
+							console.log("Menghapus gambar: " + gambarUrl); // Cek gambar yang dihapus
+							$.deleteImage(gambarUrl); // Kirim URL gambar ke server
+						}
 
+
+
+					},
+					height: 200,
+					dialogsInBody: true,
+					imageList: {
+						endpoint: "daftar_gambar.php",
+						fullUrlPrefix: "../img/",
+						thumbUrlPrefix: "../img/"
+					}
+				});
+
+				$.upload = function(file) {
+					let out = new FormData();
+					out.append('file', file, file.name);
+
+					$.ajax({
+						method: 'POST',
+						url: 'upload_gambar.php',
+						contentType: false,
+						cache: false,
+						processData: false,
+						data: out,
+						success: function(img) {
+							$('#summernote').summernote('insertImage', img);
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							console.error(textStatus + " " + errorThrown);
+						}
+					});
+				};
+
+				$.deleteImage = function(src) {
+					$.ajax({
+						method: 'POST',
+						url: 'hapus_gambar.php',
+						data: {
+							src: src
+						},
+						success: function(response) {
+							console.log("Gambar berhasil dihapus: " + response);
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							console.error(textStatus + " " + errorThrown);
+						}
+					});
+				};
 			});
 		</script>
 		<!-- script datatabels-->

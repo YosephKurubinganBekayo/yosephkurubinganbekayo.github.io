@@ -1,4 +1,70 @@
 <?php
+// fungsi ambil gambar
+function url_dasar()
+{
+  //$_SERVER['SERVER_NAME'] : alamat website, misalkan websitemu.com
+  // $_SERVER['SCRIPT_NAME'] : directory website, websitemu.com/blog/ $_SERVER['SCRIPT_NAME'] : blog
+  $url_dasar  = "http://" . $_SERVER['SERVER_NAME'] . dirname($_SERVER['SCRIPT_NAME']);
+  return $url_dasar;
+}
+function ambil_gambar($id)
+{
+  global $koneksi;
+
+  // Query untuk mendapatkan data berdasarkan ID
+  $sql1 = "SELECT * FROM tbl_aboutus WHERE id_aboutus = " . intval($id); // Sanitize ID
+  $q1   = mysqli_query($koneksi, $sql1);
+
+  if (!$q1 || mysqli_num_rows($q1) == 0) {
+    // Jika query gagal atau tidak ada data, kembalikan string kosong
+    return '';
+  }
+
+  $r1 = mysqli_fetch_array($q1);
+  $text = $r1['detail_aboutus'];
+
+  // Mencari elemen <img> dalam teks
+  preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $text, $img);
+
+  // Periksa apakah ada elemen gambar
+  if (isset($img[1]) && !empty($img[1])) {
+    // Jika ada gambar, ubah path-nya
+    $gambar = $img[1]; // ../img/filename.jpg
+    $gambar = str_replace("../img/", url_dasar() . "/img/", $gambar);
+    return $gambar;
+  }
+
+  // Jika tidak ada gambar, kembalikan string kosong
+  return '';
+}
+
+function ambil_isi($id)
+{
+  global $koneksi;
+
+  // Query untuk mendapatkan data berdasarkan ID
+  $sql1 = "SELECT * FROM tbl_aboutus WHERE id_aboutus = " . intval($id); // Sanitize ID
+  $q1   = mysqli_query($koneksi, $sql1);
+
+  if (!$q1 || mysqli_num_rows($q1) == 0) {
+    // Jika query gagal atau tidak ada data, kembalikan string kosong
+    return '';
+  }
+
+  $r1   = mysqli_fetch_array($q1);
+  $text = $r1['detail_aboutus'];
+
+  // Menghapus tag <img> menggunakan regex
+  $text = preg_replace('/< *img[^>]*>/i', '', $text);
+
+  return $text;
+}
+
+function set_isi($isi)
+{
+  $isi    = str_replace("../img/", url_dasar() . "/img/", $isi);
+  return $isi;
+}
 //-- TEKNIK OOP --
 
 
@@ -88,7 +154,6 @@ class databases
       return [];
     }
   }
-
 
   public function get_show_services_detail()
   {
