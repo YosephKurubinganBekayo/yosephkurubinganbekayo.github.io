@@ -13,7 +13,41 @@ if (isset($_SESSION["ses_username"]) == "") {
 //KONEKSI DB
 include "../call_fungtion.php";
 ?>
+<?php
+// Mulai session atau cek koneksi
 
+// Jika ada permintaan data dengan ajax
+if (isset($_GET['tanggal_terima'])) {
+    $tanggal_terima = $_GET['tanggal_terima'];
+    $tahun = substr($tanggal_terima, 2, 2); // Ambil dua digit terakhir tahun dari tanggal_terima
+
+    // Query untuk mencari nomor induk terakhir berdasarkan tahun
+    $query_tahun = "SELECT no_induk FROM buku WHERE no_induk LIKE '%/Dinarpusta/$tahun' ORDER BY id_buku DESC LIMIT 1";
+    $result_tahun = mysqli_query($koneksi, $query_tahun);
+    $data_tahun = mysqli_fetch_array($result_tahun);
+
+    if ($data_tahun) {
+        // Jika sudah ada data di tahun tersebut, ambil nomor urut terakhir dan tambahkan 1
+        $no_urut_terakhir = (int)substr($data_tahun['no_induk'], 0, 3); // Ambil 3 digit pertama
+        $no_urut_baru = $no_urut_terakhir + 1;
+    } else {
+        // Jika belum ada data untuk tahun tersebut, mulai dari 1
+        $no_urut_baru = 1;
+    }
+
+    // Format nomor urut menjadi 3 digit
+    $no_urut_format = str_pad($no_urut_baru, 3, '0', STR_PAD_LEFT);
+    $no_induk_baru = "$no_urut_format/Dinarpusta/$tahun";
+    $id_buku_baru = $no_urut_format;
+
+    // Mengembalikan data dalam format JSON
+    echo json_encode([
+        'id_buku_baru' => $id_buku_baru,
+        'no_induk_baru' => $no_induk_baru
+    ]);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -80,8 +114,8 @@ include "../call_fungtion.php";
 			<!-- Logo -->
 			<a href="index.php" class="logo">
 				<span class="logo-lg">
-					<img src="../img/profil/<?php echo $profile['logo'] ?>" alt="" style="height: 40px;">
-					<b>Arspus</b>
+					<!-- <img src="../img/profil/<?php echo $profile['logo'] ?>" alt="" style="height: 40px;"> -->
+					<b>Dinarpusta</b>
 				</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
@@ -204,6 +238,29 @@ include "../call_fungtion.php";
 						</li>
 						<li class="treeview">
 							<a href="#">
+								<i class="fa fa-building"></i> <!-- Icon untuk Data Instansi -->
+								<span>Data Instansi</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="?page=MyApp/data_departemen">
+										<i class="fa fa-sitemap"></i> <!-- Icon untuk Data Departemen -->
+										Data Departemen
+									</a>
+								</li>
+								<li>
+									<a href="?page=MyApp/data_bidang">
+										<i class="fa fa-briefcase"></i> <!-- Icon untuk Data Bidang -->
+										Data Bidang
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
 								<i class="fa fa-folder"></i>
 								<span>Kelola Data</span>
 								<span class="pull-right-container">
@@ -243,29 +300,7 @@ include "../call_fungtion.php";
 								</span>
 							</a>
 						</li>
-						<li class="treeview">
-							<a href="#">
-								<i class="fa fa-building"></i> <!-- Icon untuk Data Instansi -->
-								<span>Data Instansi</span>
-								<span class="pull-right-container">
-									<i class="fa fa-angle-left pull-right"></i>
-								</span>
-							</a>
-							<ul class="treeview-menu">
-								<li>
-									<a href="?page=MyApp/data_departemen">
-										<i class="fa fa-sitemap"></i> <!-- Icon untuk Data Departemen -->
-										Data Departemen
-									</a>
-								</li>
-								<li>
-									<a href="?page=MyApp/data_bidang">
-										<i class="fa fa-briefcase"></i> <!-- Icon untuk Data Bidang -->
-										Data Bidang
-									</a>
-								</li>
-							</ul>
-						</li>
+						
 
 						<li class="treeview">
 							<a href="#">
@@ -470,6 +505,9 @@ include "../call_fungtion.php";
 						case 'MyApp/data_buku':
 							include "admin/buku/data_buku.php";
 							break;
+						case 'MyApp/add_buku_baru':
+							include "admin/buku/add_buku_baru.php";
+							break;
 						case 'MyApp/add_buku':
 							include "admin/buku/add_buku.php";
 							break;
@@ -479,26 +517,7 @@ include "../call_fungtion.php";
 						case 'MyApp/del_buku':
 							include "admin/buku/del_buku.php";
 							break;
-							//sirkul
-						case 'data_sirkul':
-							include "admin/sirkul/data_sirkul.php";
-							break;
-						case 'add_sirkul':
-							include "admin/sirkul/add_sirkul.php";
-							break;
-						case 'panjang':
-							include "admin/sirkul/panjang.php";
-							break;
-						case 'kembali':
-							include "admin/sirkul/kembali.php";
-							break;
-							//log
-						case 'log_pinjam':
-							include "admin/log/log_pinjam.php";
-							break;
-						case 'log_kembali':
-							include "admin/log/log_kembali.php";
-							break;
+						
 							//laporan
 						case 'laporan_inventaris_buku':
 							include "admin/laporan/laporan_inventaris_buku.php";

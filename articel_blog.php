@@ -1,5 +1,9 @@
 <?php
 require 'call_fungtion.php';
+if (!file_exists(__FILE__)) {
+    header("Location: halaman_eror.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +70,9 @@ $blogs = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
                 <h4 class="text-warning">Blog & Berita</h4>
-                <h1 class="display-5 mb-4">Tunggu Apa Lagi? Simal artikel dibawah ini...</h1>
+                <h1 class="display-5 mb-4">Silahkan Jelajahi Kumpulan Artikel Di bawah ini</h1>
                 <p class="mb-0">
-                "Di sini, kita mengungkapkan sejarah yang tersembunyi, menggali kebudayaan lokal, dan membagikan pengetahuan baru. Temukan kisah inspiratif, fakta menarik, dan informasi terkini tentang pengelolaan arsip dan perpustakaan digital. Jelajahi artikel-artikel kami dan temukan keajaiban pengetahuan yang menunggu Anda!"
+                "Temukan informasi menarik seputar dunia literasi, buku, dan pengetahuan di artikel terbaru kami! Klik sekarang dan perluas wawasan Anda di website perpustakaan kami."        </p>
                 </p>
             </div>
 
@@ -205,8 +209,4 @@ $blogs = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
     </div>
 </body>
-
-
-
-
 </html>

@@ -107,7 +107,7 @@ class databases
   //fungsi menampilkan isi data dari tbl_services
   public function get_show_services()
   {
-    $data_services = "SELECT * FROM layanan ORDER BY id ASC";
+    $data_services = "SELECT * FROM layanan ORDER BY id_departemen ASC";
     $hasil_services = $this->mysqli->query($data_services);
     while ($row_services = mysqli_fetch_array($hasil_services)) {
       $result_services[] = $row_services;
@@ -117,7 +117,7 @@ class databases
   //fungsi menampilkan isi data dari tbl_services
   public function get_show_departemens()
   {
-    $data_departemens = "SELECT * FROM departemen ORDER BY id ASC";
+    $data_departemens = "SELECT * FROM departemen ORDER BY id DESC";
     $hasil_departemens = $this->mysqli->query($data_departemens);
     while ($row_departemens = mysqli_fetch_array($hasil_departemens)) {
       $result_departemens[] = $row_departemens;

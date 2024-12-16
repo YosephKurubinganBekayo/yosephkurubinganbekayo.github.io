@@ -6,8 +6,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Mendapatkan nama file saat in
   <div class="container">
     <a href="" class="navbar-brand py-2 d-flex align-items-center">
       <?php if ($profile) { ?>
-        <img src="img/profil/<?php echo htmlspecialchars($profile['logo'])?>" alt="" class="me-2">
-        <h2 class="text-white m-0"><?php echo $profile['titlewebsite']; ?></h2>
+        <img src="img/profil/<?php echo htmlspecialchars($profile['logo']) ?>" alt="" class="me-2">
+        <h2 class="text-white m-0"><?php echo htmlspecialchars ($profile['titlewebsite']); ?></h2>
       <?php } else { ?>
         <p class="m-0">Nama website</p>
       <?php } ?>
@@ -31,11 +31,31 @@ $current_page = basename($_SERVER['PHP_SELF']); // Mendapatkan nama file saat in
                 </a>
             <?php }
             } else {
+              echo "<p>Tidak ada data</p>";
+            } ?>
+          </div>
+        </div>
+
+        <div class="nav-item dropdown">
+          <a href="#service" class="nav-link <?php echo ($current_page == 'service.php') ? 'active' : ''; ?>" data-bs-toggle="dropdown">
+            <span class="dropdown-toggle">Layanan</span>
+          </a>
+          <div class="dropdown-menu m-0">
+            <?php if (!empty($departemens)) {
+              foreach ($departemens as $departemen) {
+                $services_departement = $mysqli->get_show_services_departement($departemen['id']);
+                if (!empty($services_departement)) { ?>
+                  <a href="service.php?id=<?php echo urlencode($departemen['id']); ?>" class="dropdown-item">
+                    <?php echo htmlspecialchars($departemen['nama_departemen']); ?>
+                  </a>
+                <?php } ?>
+            <?php }
+            } else {
               echo "<p>Tidak ada layanan</p>";
             } ?>
           </div>
         </div>
-        <a href="service.php" class="nav-item nav-link <?php echo ($current_page == 'service.php') ? 'active' : ''; ?>">Layanan</a>
+        <!-- <a href="service.php" class="nav-item nav-link <?php echo ($current_page == 'service.php') ? 'active' : ''; ?>">Layanan</a> -->
         <a href="articel_blog.php" class="nav-item nav-link <?php echo ($current_page == 'articel_blog.php') ? 'active' : ''; ?>">Blog & Artikel</a>
         <a href="contact.php" class="nav-item nav-link <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Kontak</a>
       </div>

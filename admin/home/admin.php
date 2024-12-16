@@ -66,7 +66,7 @@ while ($data = $sql->fetch_assoc()) {
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="?page=MyApp/data_buku" class="small-box-footer">More info
+                        <a href="?page=MyApp/layanan" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -84,7 +84,7 @@ while ($data = $sql->fetch_assoc()) {
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="?page=MyApp/data_buku" class="small-box-footer">More info
+                        <a href="?page=MyApp/kegiatan" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right"></i>
                         </a>
                     </div>

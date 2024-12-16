@@ -10,7 +10,8 @@
   <div class="row gx-0 align-items-center">
     <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
       <div class="d-flex flex-wrap">
-        <a href="<?php echo $profile['alamat'] ?>" class="text-muted small me-4"><i class="fas fa-map-marker-alt text-warning me-2"></i>Temukan Lokasi</a>
+        <a href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." class="text-muted small me-4"><i class="fas fa-map-marker-alt text-warning me-2"></i>Temukan Lokasi</a>
+        <!-- <a href="<?php echo $profile['alamat'] ?>" class="text-muted small me-4"><i class="fas fa-map-marker-alt text-warning me-2"></i>Temukan Lokasi</a> -->
         <a href="tel:<?php echo $profile['telepon'] ?>" class="text-muted small me-4"><i class="fas fa-phone-alt text-warning me-2"></i><?php echo $profile['telepon'] ?></a>
         <a href="mailto:<?php echo $profile['email'] ?>" class="text-muted small me-0"><i class="fas fa-envelope text-warning me-2"></i><?php echo $profile['email'] ?></a>
       </div>
