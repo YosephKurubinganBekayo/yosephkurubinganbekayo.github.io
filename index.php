@@ -5,6 +5,7 @@ require 'call_fungtion.php';
 <!DOCTYPE html>
 <html lang="en">
 <?php include "head.php" ?>
+
 <body>
   <!-- Spinner Start -->
   <?php include "topbar.php" ?>
@@ -28,7 +29,7 @@ require 'call_fungtion.php';
                     Selamat Datang Di <?php echo $profile['titlewebsite']; ?>
                   </h4>
                   <h2 class="display-5 text-uppercase text-white mb-4">
-                    <?php echo $profile['titleparagraf']; ?>
+                    <?php echo $profile['copyright']; ?>
                   </h2>
                   <p class="mb-5 fs-5">
                     <?php echo $profile['description']; ?>
@@ -99,14 +100,14 @@ require 'call_fungtion.php';
         echo "<p>Tidak ada layanan</p>";
       }
       ?>
-      
+
     </div>
     <!-- Carousel End -->
   </div>
   <!-- Navbar & Hero End -->
 
   <!-- About Start -->
-  <div id="about" class="container-fluid about py-5 ">
+  <div id="about" class="container-fluid about py-lg-5 ">
     <div class="container py-5">
       <div class="row g-5 align-items-center">
         <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
@@ -142,8 +143,8 @@ require 'call_fungtion.php';
   <!-- About End -->
 
   <!-- Services Start -->
-  <div class="container-fluid service py-5" id="service">
-    <div class="container py-5">
+  <div class="container-fluid service py-lg-5" id="service">
+    <div class="container py-lg-5">
       <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
         <h4 class="text-warning">Layanan Kami</h4>
         <h1 class="display-5 mb-4">Kami menyediakan layanan terbaik untuk anda</h1>
@@ -210,13 +211,13 @@ require 'call_fungtion.php';
   </div>
   <!-- Services End -->
   <!-- info service Start -->
-  <div class="container-fluid offer-section py-5" id="service_info">
-    <div class="container py-5">
+  <div class="container-fluid offer-section py-lg-5" id="service_info">
+    <div class="container py-lg-5">
       <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
         <h4 class="text-warning">Informasi Pelayanan</h4>
         <h1 class="display-5 mb-4">Informasi tentang jadwal layanan</h1>
         <p class="mb-0">
-        Temukan informasi lengkap tentang jadwal layanan, koleksi terbaru, dan berbagai program menarik yang bisa Anda ikuti. Ayo, jelajahi sekarang!
+          Temukan informasi lengkap tentang jadwal layanan, koleksi terbaru, dan berbagai program menarik yang bisa Anda ikuti. Ayo, jelajahi sekarang!
         </p>
       </div>
       <div class="row g-5 align-items-center" data-wow-delay="0.2s">
@@ -298,7 +299,7 @@ require 'call_fungtion.php';
   <!-- Offer End -->
 
   <!-- Blog Start -->
-  <div class="container-fluid blog py-5 " id="blog_articel">
+  <div class="container-fluid blog py-lg-5 " id="blog_articel">
     <div class="container py-5">
       <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
         <h4 class="text-warning">Blog & Artikel</h4>
@@ -354,8 +355,7 @@ require 'call_fungtion.php';
   </div>
   <!-- Blog End -->
   <!-- Contact Start -->
-  <div class="container-fluid contact py-5 " id="contact">
-
+  <div class="container-fluid contact py-lg-5 " id="contact">
     <div class="container py-5">
       <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
         <h4 class="text-warning">Kontak</h4>
@@ -365,99 +365,100 @@ require 'call_fungtion.php';
           Kami siap membantu dengan sepenuh hati.
         </p>
       </div>
-      <div class="row kontak_item">
-        <div class="col-md-6">
-          <div class="bg-light rounded p-5 mb-5 h-100 wow fadeInLeft" data-wow-delay="0.2s">
+      <div class="row kontak_item ">
+        <div class="col-md-6 pb-4">
+          <div class="bg-light rounded  d-flex flex-column justify-content-between p-4 h-100 wow fadeInLeft" data-wow-delay="0.2s">
             <h4 class="text-warning mb-4">Tekan untuk menghubungi</h4>
-            <div class="row g-4">
-              <!-- <div class="col-md-6"> -->
-              <div class="contact-add-item">
-                <div class="contact-icon text-warning mb-4">
+            <!-- Alamat -->
+            <a class="" href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." target="_blank">
+              <div class="contact-add-item d-flex py-3">
+                <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fas fa-map-marker-alt fa-2x"></i>
                 </div>
                 <div>
                   <h4>Alamat</h4>
-                  <p class="mb-0"> <a class="text-dark" href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." target="_blank">Jl. R. W. Monginsidi No.3, Pasir Panjang, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.
-                    </a> </p>
+                  <p class="mb-0">
+                    Jl. R. W. Monginsidi No.3, Pasir Panjang, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.
+                  </p>
                 </div>
               </div>
-              <!-- </div> -->
-              <!-- <div class="col-md-6"> -->
-              <div class="contact-add-item">
-                <div class="contact-icon text-warning mb-4">
+            </a>
+            <!-- Email -->
+            <a class="" href="mailto:<?php echo $profile['email']; ?>">
+              <div class="contact-add-item d-flex py-3">
+                <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fas fa-envelope fa-2x"></i>
                 </div>
                 <div>
                   <h4>Email</h4>
                   <p class="mb-0">
-                    <a class="text-dark" href="mailto:<?php echo $profile['email'] ?>"><?php echo $profile['email'] ?></a>
+                    <?php echo $profile['email']; ?>
                   </p>
                 </div>
               </div>
-              <!-- </div> -->
-              <!-- <div class="col-md-6"> -->
-              <div class="contact-add-item">
-                <div class="contact-icon text-warning mb-4">
+            </a>
+            <!-- Telepon -->
+            <a class="" href="tel:<?php echo $profile['telepon']; ?>">
+              <div class="contact-add-item d-flex py-3">
+                <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fa fa-phone-alt fa-2x"></i>
                 </div>
                 <div>
                   <h4>Telepon</h4>
                   <p class="mb-0">
-                    <a class="text-dark" href="mailto:<?php echo $profile['telepon'] ?>"><?php echo $profile['telepon'] ?></a>
+                    <?php echo $profile['telepon']; ?>
                   </p>
-                  <!-- <p class="mb-0"><?php echo $profile['telepon'] ?></p> -->
                 </div>
               </div>
-              <!-- </div> -->
-              <div class="col-md-6">
-                <div class="contact-add-item">
-                  <div class="contact-icon text-warning mb-4">
-                    <i class="fab fa-whatsapp fa-2x"></i>
-                  </div>
-                  <div>
-                    <h4>WhatsApp</h4>
-                    <p class="mb-0">
-                      <a class="text-dark" href="https://wa.me/<?php echo $profile['telepon'] ?>" target="_blank">
-                        <?php echo $profile['telepon'] ?>
-                      </a>
-                    </p>
-                  </div>
+            </a>
+            <!-- WhatsApp -->
+            <a class="" href="https://wa.me/<?php echo $profile['telepon']; ?>" target="_blank">
+              <div class="contact-add-item d-flex py-3">
+                <div class="contact-icon text-warning mb-4 me-3">
+                  <i class="fab fa-whatsapp fa-2x"></i>
+                </div>
+                <div>
+                  <h4>WhatsApp</h4>
+                  <p class="mb-0">
+                    <?php echo $profile['telepon']; ?>
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="bg-light p-5 rounded h-100 wow fadeInRight" data-wow-delay="0.2s">
+        <!-- Form -->
+        <div class="col-md-6 pb-4">
+          <div class="bg-light p-3 rounded h-100 wow fadeInRight" data-wow-delay="0.2s">
             <h4 class="text-warning">Kirim pesan ke kami</h4>
             <p class="mb-4">Butuh Bantuan..? Silahkan Hubungi kami untuk informasi lebih lanjut</p>
             <form method="POST">
               <div class="form-floating mb-3">
-                <input type="text" name="name" class="form-control" placeholder="Nama " required>
+                <input type="text" name="name" class="form-control" placeholder="Nama" aria-label="Nama" required>
                 <label>Nama</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" required>
                 <label>Email</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" name="no_hp" class="form-control" placeholder="No Hp" required>
+                <input type="text" name="no_hp" class="form-control" placeholder="No Hp" aria-label="No Hp" required>
                 <label>No Hp</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject" required>
                 <label>Subject</label>
               </div>
               <div class="form-floating mb-3">
-                <textarea name="message" class="form-control" placeholder="Pesan" style="height: 150px" required></textarea>
+                <textarea name="message" class="form-control" placeholder="Pesan" style="height: 150px" aria-label="Pesan" required></textarea>
                 <label>Pesan</label>
               </div>
-              <button type="submit" class="btn btn-secondary w-100 py-3">Kirim Pesan</button>
+              <button type="submit" class="btn btn-secondary rounded w-100 py-3">Kirim Pesan</button>
             </form>
           </div>
         </div>
-
       </div>
+
       <div class="row wow fadeInUp pt-5" data-wow-delay="0.2s ">
         <?php echo $profile['gmap']
         ?>
