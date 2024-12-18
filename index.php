@@ -1,16 +1,10 @@
 <?php
 require 'call_fungtion.php';
-if (!file_exists(__FILE__)) {
-  header("Location: halaman_eror.php");
-  exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include "head.php" ?>
-
-
 <body>
   <!-- Spinner Start -->
   <?php include "topbar.php" ?>

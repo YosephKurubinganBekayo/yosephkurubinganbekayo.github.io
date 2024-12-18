@@ -1,9 +1,3 @@
-<?php
-//include "admin/inc/fungsi.php";
-// $mysqli = new databases();
-// $profile = $mysqli->get_show_profile(); 
-?>
-
 <head>
   <meta charset="utf-8" />
   <?php

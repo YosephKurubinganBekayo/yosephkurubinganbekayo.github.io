@@ -1,11 +1,5 @@
 <?php
 require 'call_fungtion.php';
-if (!file_exists(__FILE__)) {
-    header("Location: halaman_eror.php");
-    exit();
-}
-
-// include "admin/inc/koneksi.php";
 // Tangkap ID dari URL
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
