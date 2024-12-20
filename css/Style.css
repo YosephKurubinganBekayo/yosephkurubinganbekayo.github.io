@@ -273,8 +273,6 @@
 }
 /* Default styling untuk tombol */
 
-
-
 /*** Navbar End ***/
 
 /*** Carousel Hero Header Start ***/
@@ -493,6 +491,9 @@
   transition: 0.5s;
 }
 
+.blog .blog-item:hover {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+}
 .blog .blog-item:hover a:hover {
   color: var(--bs-primary);
 }
@@ -503,7 +504,6 @@
 }
 
 .blog .blog-item .blog-img {
-  border-radius: 10px;
   position: relative;
   overflow: hidden;
 }

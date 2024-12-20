@@ -319,8 +319,8 @@ require 'call_fungtion.php';
               $deskripsi = substr($deskripsi, 0, $max_length - strlen($judul)) . '...';
             }
         ?>
-            <div class="blog-item">
-              <div class="blog-img ">
+            <div class="blog-item my-4">
+              <div class="blog-img">
                 <img src="img/<?php echo htmlspecialchars($blog['gambar']); ?>" class="img-fluid rounded-top w-100" alt="<?php echo htmlspecialchars($service['nama_layanan']); ?>" style="height: 230px; object-fit: cover; object-position: center; width: 100%;" />
 
               </div>
@@ -332,7 +332,7 @@ require 'call_fungtion.php';
                 </div>
               </div>
               <div class="mb-4 px-3" style="height: 150px; overflow: hidden;">
-                <a href="#" class="h4 d-inline-block mb-3">
+                <a href="articel_blog_detail.php?id=<?php echo $blog['id']; ?>" class="h4 d-inline-block mb-3">
                   <?php echo ($judul); ?>
                 </a>
                 <?php echo $deskripsi ?>
