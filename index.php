@@ -370,7 +370,7 @@ require 'call_fungtion.php';
           <div class="bg-light rounded  d-flex flex-column justify-content-between p-4 h-100 wow fadeInLeft" data-wow-delay="0.2s">
             <h4 class="text-warning mb-4">Tekan untuk menghubungi</h4>
             <!-- Alamat -->
-            <a class="" href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." target="_blank">
+            <a class="text-body" href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." target="_blank">
               <div class="contact-add-item d-flex py-3">
                 <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fas fa-map-marker-alt fa-2x"></i>
@@ -384,7 +384,7 @@ require 'call_fungtion.php';
               </div>
             </a>
             <!-- Email -->
-            <a class="" href="mailto:<?php echo $profile['email']; ?>">
+            <a class="text-body" href="mailto:<?php echo $profile['email']; ?>">
               <div class="contact-add-item d-flex py-3">
                 <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fas fa-envelope fa-2x"></i>
@@ -398,21 +398,21 @@ require 'call_fungtion.php';
               </div>
             </a>
             <style>
-                    .email-text {
-                      display: inline-block;
-                      /* Memungkinkan batasan lebar berlaku */
-                      width: 250px;
-                      /* Atur lebar sesuai kebutuhan */
-                      white-space: normal;
-                      /* Izinkan teks membungkus ke baris berikutnya */
-                      word-break: break-all;
-                      /* Memaksa teks panjang tanpa spasi untuk terputus */
-                      overflow-wrap: break-word;
-                      /* Alternatif untuk memutus teks */
-                    }
-                  </style>
+              .email-text {
+                display: inline-block;
+                /* Memungkinkan batasan lebar berlaku */
+                width: 250px;
+                /* Atur lebar sesuai kebutuhan */
+                white-space: normal;
+                /* Izinkan teks membungkus ke baris berikutnya */
+                word-break: break-all;
+                /* Memaksa teks panjang tanpa spasi untuk terputus */
+                overflow-wrap: break-word;
+                /* Alternatif untuk memutus teks */
+              }
+            </style>
             <!-- Telepon -->
-            <a class="" href="tel:<?php echo $profile['telepon']; ?>">
+            <a class="text-body" href="tel:<?php echo $profile['telepon']; ?>">
               <div class="contact-add-item d-flex py-3">
                 <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fa fa-phone-alt fa-2x"></i>
@@ -426,7 +426,7 @@ require 'call_fungtion.php';
               </div>
             </a>
             <!-- WhatsApp -->
-            <a class="" href="https://wa.me/<?php echo $profile['telepon']; ?>" target="_blank">
+            <a class="text-body" href="https://wa.me/<?php echo $profile['telepon']; ?>" target="_blank">
               <div class="contact-add-item d-flex py-3">
                 <div class="contact-icon text-warning mb-4 me-3">
                   <i class="fab fa-whatsapp fa-2x"></i>
