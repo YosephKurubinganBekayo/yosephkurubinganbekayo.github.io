@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
 
     <div class="container-fluid blog py-5">
         <div class="container pb-5">
-            <div class="text-center mx-auto  wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+            <div class="text-center mx-auto  wow fadeInUp pb-4" data-wow-delay="0.2s" style="max-width: 800px">
                 <h1 class="display-5 ">Detail Blog dan Berita</h1>
             </div>
 
