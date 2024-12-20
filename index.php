@@ -1,5 +1,9 @@
 <?php
-require 'call_fungtion.php'
+require 'call_fungtion.php';
+if (!file_exists(__FILE__)) {
+  header("Location: halaman_eror.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +40,7 @@ require 'call_fungtion.php'
                     <?php echo $profile['description']; ?>
                   </p>
                   <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                    <a class="btn btn-light rounded-start rounded-top py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i>Tonton Video</a>
+                    <!-- <a class="btn btn-light rounded-start rounded-top py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i>Tonton Video</a> -->
                     <a class="btn btn-light rounded-end rounded-bottom py-3 px-4 px-md-5 ms-2" href="#about">Selengkapnya</a>
                   </div>
                   <div class="d-flex align-items-center justify-content-center justify-content-md-start">
@@ -77,7 +81,7 @@ require 'call_fungtion.php'
                         <?php echo $profile['description']; ?>
                       </p>
                       <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                        <a class="btn btn-light rounded-start rounded-top py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i>Tonton Video</a>
+                        <!-- <a class="btn btn-light rounded-start rounded-top py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i>Tonton Video</a> -->
                         <a class="btn btn-light rounded-end rounded-bottom py-3 px-4 px-md-5 ms-2" href="#about">Selengkapnya</a>
                       </div>
                       <div class="d-flex align-items-center justify-content-center justify-content-md-start">
@@ -101,49 +105,13 @@ require 'call_fungtion.php'
         echo "<p>Tidak ada layanan</p>";
       }
       ?>
-      <!-- <div class="header-carousel-item">
-        <img src="img/carousel-2.jpg" class="img-fluid w-100" alt="Image" />
-        <div class="carousel-caption">
-          <div class="container">
-            <div class="row g-5">
-              <div class="col-12 animated fadeInUp">
-                <div class="text-center">
-                  <h4 class="text-warning text-uppercase fw-bold mb-4">
-                    Welcome To Stocker
-                  </h4>
-                  <h1 class="display-4 text-uppercase text-white mb-4">
-                    Invest your money with higher return
-                  </h1>
-                  <p class="mb-5 fs-5">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy...
-                  </p>
-                  <div class="d-flex justify-content-center flex-shrink-0 mb-4">
-                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                    <a class="btn btn-warning rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <h2 class="text-white me-2">Follow Us:</h2>
-                    <div class="d-flex justify-content-end ms-2">
-                      <a class="btn btn-md-square btn-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-md-square btn-light rounded-circle mx-2" href=""><i class="fab fa-twitter"></i></a>
-                      <a class="btn btn-md-square btn-light rounded-circle mx-2" href=""><i class="fab fa-instagram"></i></a>
-                      <a class="btn btn-md-square btn-light rounded-circle ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+
     </div>
     <!-- Carousel End -->
   </div>
   <!-- Navbar & Hero End -->
 
-  <!-- Abvout Start -->
+  <!-- About Start -->
   <div id="about" class="container-fluid about py-5 ">
     <div class="container py-5">
       <div class="row g-5 align-items-center">
@@ -186,7 +154,7 @@ require 'call_fungtion.php'
         <h4 class="text-warning">Layanan Kami</h4>
         <h1 class="display-5 mb-4">Kami menyediakan layanan terbaik untuk anda</h1>
         <?php
-        $query_bidang = $koneksi->query("SELECT * FROM layanan");
+        $query_bidang = $koneksi->query("SELECT * FROM layanan ORDER BY id_departemen ASC");
         $bidang_data = [];
         while ($row = $query_bidang->fetch_assoc()) {
           $bidang_data[] = $row; // Simpan data bidang ke array
@@ -233,7 +201,7 @@ require 'call_fungtion.php'
                   <!-- </p> -->
                 </div>
                 <div class="p-4">
-                  <a class="btn btn-secondary rounded-start rounded-top py-2 px-4" href="service.php#layanan-<?php echo htmlspecialchars($service['id']) ?>">Baca selengkapnya</a>
+                  <a class="btn btn-secondary rounded-start rounded-top py-2 px-4" href="service.php?id=<?php echo htmlspecialchars($service['id_departemen']) ?>#layanan-<?php echo htmlspecialchars($service['id']) ?>">Baca selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -247,91 +215,14 @@ require 'call_fungtion.php'
     </div>
   </div>
   <!-- Services End -->
-
-  <!-- Features Start -->
-  <!-- <div class="container-fluid feature pb-5">
-    <div class="container pb-5">
-      <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-        <h4 class="text-warning">Our Features</h4>
-        <h1 class="display-5 mb-4">
-          Connecting businesses, ideas, and people for greater impact.
-        </h1>
-        <p class="mb-0">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
-          adipisci facilis cupiditate recusandae aperiam temporibus corporis
-          itaque quis facere, numquam, ad culpa deserunt sint dolorem autem
-          obcaecati, ipsam mollitia hic.
-        </p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-          <div class="feature-item p-4">
-            <div class="feature-icon p-4 mb-4">
-              <i class="fas fa-chart-line fa-4x text-warning"></i>
-            </div>
-            <h4>Global Management</h4>
-            <p class="mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic
-              laborum odit pariatur...
-            </p>
-            <a class="btn btn-warning rounded-pill py-2 px-4" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-          <div class="feature-item p-4">
-            <div class="feature-icon p-4 mb-4">
-              <i class="fas fa-university fa-4x text-warning"></i>
-            </div>
-            <h4>Corporate Banking</h4>
-            <p class="mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic
-              laborum odit pariatur...
-            </p>
-            <a class="btn btn-warning rounded-pill py-2 px-4" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-          <div class="feature-item p-4">
-            <div class="feature-icon p-4 mb-4">
-              <i class="fas fa-file-alt fa-4x text-warning"></i>
-            </div>
-            <h4>Asset Management</h4>
-            <p class="mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic
-              laborum odit pariatur...
-            </p>
-            <a class="btn btn-warning rounded-pill py-2 px-4" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-          <div class="feature-item p-4">
-            <div class="feature-icon p-4 mb-4">
-              <i class="fas fa-hand-holding-usd fa-4x text-warning"></i>
-            </div>
-            <h4>Investment Bank</h4>
-            <p class="mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic
-              laborum odit pariatur...
-            </p>
-            <a class="btn btn-warning rounded-pill py-2 px-4" href="#">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- Features End -->
-
-  <!-- Offer Start -->
+  <!-- info service Start -->
   <div class="container-fluid offer-section py-5" id="service_info">
     <div class="container py-5">
       <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-        <h4 class="text-warning">Informasi layanan</h4>
-        <h1 class="display-5 mb-4">Informasii tentang jadwal layanan Kami</h1>
+        <h4 class="text-warning">Informasi Pelayanan</h4>
+        <h1 class="display-5 mb-4">Informasi tentang jadwal layanan</h1>
         <p class="mb-0">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
-          adipisci facilis cupiditate recusandae aperiam temporibus corporis
-          itaque quis facere, numquam, ad culpa deserunt sint dolorem autem
-          obcaecati, ipsam mollitia hic.
+          Temukan informasi lengkap tentang jadwal layanan, koleksi terbaru, dan berbagai program menarik yang bisa Anda ikuti. Ayo, jelajahi sekarang!
         </p>
       </div>
       <div class="row g-5 align-items-center" data-wow-delay="0.2s">
@@ -397,14 +288,7 @@ require 'call_fungtion.php'
                     <li><i class="far fa-clock"> </i><?= !empty($row['jam_tambahan']) ? htmlspecialchars($row['jam_tambahan']) : '<em>Tidak ada data</em>'; ?></li>
                   </ul>
                   <p>Tutup : <?php echo $row['tutup'] ?></p>
-                  <!-- <p class="mb-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Corporis amet sequi molestiae tenetur eum mollitia,
-                      blanditiis, magnam illo magni error dolore unde
-                      perspiciatis tempore et totam corrupti dignissimos aut
-                      praesentium?
-                    </p> -->
-                  <a class="btn btn-secondary rounded-end rounded-bottom py-2 px-4" href="service.php#info_about">Baca Selengkapnya</a>
+                  <a class="btn btn-secondary rounded-end rounded-bottom py-2 px-4" href="service.php?id=<?php echo htmlspecialchars($row['id_departemen']) ?>#info_about">Baca Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -424,10 +308,9 @@ require 'call_fungtion.php'
     <div class="container py-5">
       <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
         <h4 class="text-warning">Blog & Artikel</h4>
-        <h1 class="display-5 mb-4">Tunggu Apa Lagi? Simal artikel dibawah ini...</h1>
+        <h1 class="display-5 mb-4">Silahkan Jelajahi Kumpulan Artikel Di bawah ini</h1>
         <p class="mb-0">
-          "Di sini, kita mengungkapkan sejarah yang tersembunyi, menggali kebudayaan lokal, dan membagikan pengetahuan baru. Temukan kisah inspiratif, fakta menarik, dan informasi terkini tentang pengelolaan arsip dan perpustakaan digital. Jelajahi artikel-artikel kami dan temukan keajaiban pengetahuan yang menunggu Anda!"
-        </p>
+          "Temukan informasi menarik seputar dunia literasi, buku, dan pengetahuan di artikel terbaru kami! Klik sekarang dan perluas wawasan Anda di website perpustakaan kami." </p>
       </div>
       <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
         <?php if (!empty($blogs)) {
@@ -442,27 +325,27 @@ require 'call_fungtion.php'
               $deskripsi = substr($deskripsi, 0, $max_length - strlen($judul)) . '...';
             }
         ?>
-            <div class="blog-item p-2">
+            <div class="blog-item">
               <div class="blog-img ">
                 <img src="img/<?php echo htmlspecialchars($blog['gambar']); ?>" class="img-fluid rounded-top w-100" alt="<?php echo htmlspecialchars($service['nama_layanan']); ?>" style="height: 230px; object-fit: cover; object-position: center; width: 100%;" />
 
               </div>
-              <div class="d-flex align-items-center border-bottom py-2 mb-3">
+              <div class="d-flex align-items-center border-bottom py-2 mb-3 px-3">
                 <img src="img/aset/noimage.png" class="img-fluid rounded-circle" style="width: 50px; height: 50px" alt="" />
                 <div class="ms-2">
                   <p class="mb-0"><?php echo htmlspecialchars($blog['penulis']); ?></p>
                   <p class="mb-0"><?php echo htmlspecialchars($blog['tanggal']); ?></p>
                 </div>
               </div>
-              <div class="mb-4" style="height: 150px; overflow: hidden;">
+              <div class="mb-4 px-3" style="height: 150px; overflow: hidden;">
                 <a href="#" class="h4 d-inline-block mb-3">
                   <?php echo ($judul); ?>
                 </a>
                 <?php echo $deskripsi ?>
               </div>
 
-              <div class="text-end mt-2 border-top pt-2">
-                <a href="articel_blog_detail.php?id=<?php echo $blog['id']; ?>" class="btn btn-secondary rounded-start rounded-bottom">Selengkapnya</a>
+              <div class="text-end mt-2 border-top  p-2">
+                <a href="articel_blog_detail.php?id=<?php echo $blog['id']; ?>" class="btn btn-secondary rounded-start rounded-bottom">Baca Selengkapnya</a>
               </div>
             </div>
         <?php }
@@ -470,8 +353,8 @@ require 'call_fungtion.php'
           echo "<p>Tidak ada Blog dan berita</p>";
         } ?>
       </div>
-      <div class="text-end mt-4">
-        <a href="articel_blog.php" class="btn btn-secondary rounded-start rounded-top">Semua Berita</a>
+      <div class="text-center mt-5">
+        <a href="articel_blog.php" class="btn btn-warning rounded-pill px-5 py-2 ">Semua Blog & Artikel</a>
       </div>
     </div>
   </div>
@@ -513,8 +396,23 @@ require 'call_fungtion.php'
                 <div>
                   <h4>Email</h4>
                   <p class="mb-0">
-                    <a class="text-dark" href="mailto:<?php echo $profile['email'] ?>"><?php echo $profile['email'] ?></a>
+                    <a class="text-dark email-text" href="mailto:<?php echo $profile['email'] ?>"><?php echo htmlspecialchars($profile['email']) ?></a>
                   </p>
+
+                  <style>
+                    .email-text {
+                      display: inline-block;
+                      /* Memungkinkan batasan lebar berlaku */
+                      width: 250px;
+                      /* Atur lebar sesuai kebutuhan */
+                      white-space: normal;
+                      /* Izinkan teks membungkus ke baris berikutnya */
+                      word-break: break-all;
+                      /* Memaksa teks panjang tanpa spasi untuk terputus */
+                      overflow-wrap: break-word;
+                      /* Alternatif untuk memutus teks */
+                    }
+                  </style>
                 </div>
               </div>
               <!-- </div> -->
@@ -596,7 +494,7 @@ require 'call_fungtion.php'
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-  
+
   <!-- JavaScript Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

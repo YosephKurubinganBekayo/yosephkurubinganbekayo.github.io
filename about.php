@@ -1,5 +1,9 @@
 <?php
 require 'call_fungtion.php';
+if (!file_exists(__FILE__)) {
+    header("Location: halaman_eror.php");
+    exit();
+}
 
 // include "admin/inc/koneksi.php";
 // Tangkap ID dari URL
@@ -28,10 +32,6 @@ if ($id > 0) {
     } else {
         die("Query gagal: " . $koneksi->error);
     }
-} else {
-    $title = 'ID Tidak Valid';
-    $detail = 'Permintaan tidak valid.';
-    $image = '';
 }
 
 ?>
@@ -47,7 +47,10 @@ if ($id > 0) {
     <!-- Topbar End -->
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
-        <?php include "navbar.php" ?>
+        <?php include "navbar.php" ;
+                if (!empty($id)) {
+
+        ?>
         <!-- Header Start -->
         <style>
             .bg-breadcrumb {
@@ -97,8 +100,11 @@ if ($id > 0) {
                         </div>
                     </div>
                 <?php } ?>
+            </div>
         </div>
-    </div>
+        <?php } else {
+            include "eror.php";
+        } ?>
     <!-- About End -->
     <!-- Footer Start -->
     <?php include "footer.php" ?>

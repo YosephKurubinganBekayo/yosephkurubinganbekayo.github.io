@@ -1,5 +1,9 @@
 <?php
 require 'call_fungtion.php';
+if (!file_exists(__FILE__)) {
+  header("Location: halaman_eror.php");
+  exit();
+}
 if (isset($_POST['btnLogin'])) {
   $username = mysqli_real_escape_string($koneksi, $_POST['username']);
   $password = mysqli_real_escape_string($koneksi, md5($_POST['password']));

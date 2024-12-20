@@ -63,7 +63,7 @@ if ($datakode) {
 
                                 <div class="form-group">
                                     <label>No Induk</label>
-                                    <input type="text" name="no_induk" id="no_induk" class="form-control" placeholder="id/dinarspus/tahun" readonly>
+                                    <input type="text" name="no_induk" id="no_induk" class="form-control" placeholder="id/Dinarpusta/tahun" readonly>
                                 </div>
 
                                 <div class="form-group">
@@ -98,13 +98,12 @@ if ($datakode) {
                                 <div class="form-group">
                                     <label>Jenis</label>
 
-                                    <select name="jenis" id="jenis" class="form-control" required>
+                                    <select name="jenis" id="jenis" class="form-control select2" required>
                                         <option value="">Pilih Jenis</option>
                                         <option value="F">F</option>
                                         <option value="NF">NF</option>
                                         <option value="R">R</option>
                                     </select>
-                                    <input type="text" name="jenis_manual" id="jenis_manual" class="form-control" placeholder="Atau ketik jenis" oninput="setJenisValue()" />
 
                                 </div>
 
