@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
 
     <div class="container-fluid blog py-5">
         <div class="container pb-5">
-            <div class="text-center mx-auto  wow fadeInUp pb-4" data-wow-delay="0.2s" style="max-width: 800px">
+            <div class="text-center mx-auto  wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
                 <h1 class="display-5 ">Detail Blog dan Berita</h1>
             </div>
 
@@ -97,7 +97,7 @@ if (isset($_GET['id'])) {
 
                 </div>
             </div>
-            <div class="text-center mx-auto  wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+            <div class="text-center mx-auto  wow fadeInUp pb-5" data-wow-delay="0.2s" style="max-width: 800px">
                 <h1 class="display-5 ">Blog dan Artikel Lainnya</h1>
             </div>
 
@@ -123,7 +123,7 @@ if (isset($_GET['id'])) {
 
                             </div>
                             <div class="mb-4" style="height: 180px; overflow: hidden;">
-                                <a href="#" class="h4 d-inline-block mb-3">
+                                <a href="articel_blog_detail.php?id=<?php echo $blog['id']; ?>" class="h4 d-inline-block mb-3">
                                     <?= htmlspecialchars($judul); ?>
                                 </a>
                                 <?php echo ($deskripsi); ?>

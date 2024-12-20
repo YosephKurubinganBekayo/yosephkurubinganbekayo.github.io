@@ -105,7 +105,7 @@ $blogs = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                     </div>
                                 </div>
                                 <div class="mb-4" style="height: 150px; overflow: hidden;">
-                                    <a href="#" class="h4 d-inline-block mb-3">
+                                    <a href="articel_blog_detail.php?id=<?php echo $blog['id']; ?>" class="h4 d-inline-block mb-3">
                                         <?php echo ($judul); ?>
                                     </a>
                                     <?php echo $deskripsi ?>
