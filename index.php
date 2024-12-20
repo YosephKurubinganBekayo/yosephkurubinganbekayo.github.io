@@ -121,7 +121,7 @@ require 'call_fungtion.php';
             $sql = $koneksi->query("SELECT * FROM tbl_aboutus LIMIT 1");
             while ($data = $sql->fetch_assoc()) {
             ?>
-              <?php echo strlen($data['detail_aboutus']) > 750 ? substr($data['detail_aboutus'], 0, 750) . "..." : $data['detail_aboutus']; ?>
+              <?php echo strlen($data['detail_aboutus']) > 700 ? substr($data['detail_aboutus'], 0, 700) . "..." : $data['detail_aboutus']; ?>
 
             <?php }
             ?>
