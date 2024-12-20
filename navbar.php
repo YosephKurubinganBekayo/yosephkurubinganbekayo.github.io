@@ -7,7 +7,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Mendapatkan nama file saat in
     <a href="" class="navbar-brand py-2 d-flex align-items-center">
       <?php if ($profile) { ?>
         <img src="img/profil/<?php echo htmlspecialchars($profile['logo']) ?>" alt="" class="me-2">
-        <h2 class="text-white m-0"><?php echo htmlspecialchars ($profile['titlewebsite']); ?></h2>
+        <h2 class="text-white m-0"><?php echo htmlspecialchars($profile['titlewebsite']); ?></h2>
       <?php } else { ?>
         <p class="m-0">Nama website</p>
       <?php } ?>
@@ -59,7 +59,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Mendapatkan nama file saat in
         <a href="articel_blog.php" class="nav-item nav-link <?php echo ($current_page == 'articel_blog.php') ? 'active' : ''; ?>">Blog & Artikel</a>
         <a href="contact.php" class="nav-item nav-link <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">Kontak</a>
       </div>
-      <a href="admin/index.php" class="btn btn-light rounded-start rounded-bottom py-2 px-4 my-3 my-lg-0 flex-shrink-0">Masuk</a>
+      <a href="admin/index.php" class="btn btn-light rounded-start btn-custom rounded-bottom py-2 px-4 my-3 my-lg-0 flex-shrink-0">Masuk</a>
     </div>
   </div>
 </nav>

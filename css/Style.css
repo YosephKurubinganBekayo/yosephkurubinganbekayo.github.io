@@ -270,9 +270,24 @@
     background: var(--bs-primary);
     transition: 0.5s;
   }
-
-  
 }
+/* Default styling untuk tombol */
+
+/* Warna tombol untuk layar ponsel */
+@media (max-width: 767px) {
+  .btn-custom {
+    width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--bs-white) !important;
+    background-color: var(
+      --bs-primary
+    ); /* Warna tombol untuk layar besar (btn-light) */
+    font-size: 16px;
+  }
+}
+
 /*** Navbar End ***/
 
 /*** Carousel Hero Header Start ***/

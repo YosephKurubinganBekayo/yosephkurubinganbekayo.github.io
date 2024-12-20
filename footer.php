@@ -4,9 +4,8 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-6 col-xl-5">
                 <div class="footer-item ">
-                    <!-- <h4 class="text-white mb-4"><?php echo $profile['titlewebsite']; ?></h4> -->
                     <a href="index.php" class="p-0 d-flex align-items-center mb-2">
-                        <img src="img/aset/<?php echo htmlspecialchars($profile['logo']); ?>" alt="Logo" style="height: 150px; margin-right: 15px;">
+                        <img src="img/aset/<?php echo htmlspecialchars($profile['logo']); ?>" alt="Logo" style="height: 130px; margin-right: 15px;">
                         <h2 class="text-white mb-0"><?php echo $profile['titleparagraf']; ?></h2>
                     </a>
                     <p><?php echo $profile['description']; ?></p>
