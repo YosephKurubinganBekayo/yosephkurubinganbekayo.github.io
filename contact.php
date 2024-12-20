@@ -151,30 +151,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p class="mb-4">Butuh Bantuan..? Silahkan Hubungi kami untuk informasi lebih lanjut</p>
                         <form method="POST">
                             <div class="form-floating mb-3">
-                                <input type="text" name="name" class="form-control" placeholder="Nama " required>
+                                <input type="text" name="name" class="form-control" placeholder="Nama" aria-label="Nama" required>
                                 <label>Nama</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" required>
                                 <label>Email</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" name="no_hp" class="form-control" placeholder="No Hp" required>
+                                <input type="text" name="no_hp" class="form-control" placeholder="No Hp" aria-label="No Hp" required>
                                 <label>No Hp</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject" required>
                                 <label>Subject</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea name="message" class="form-control" placeholder="Pesan" style="height: 150px" required></textarea>
+                                <textarea name="message" class="form-control" placeholder="Pesan" style="height: 150px" aria-label="Pesan" required></textarea>
                                 <label>Pesan</label>
                             </div>
-                            <button type="submit" class="btn btn-secondary w-100 py-3">Kirim Pesan</button>
+                            <button type="submit" class="btn btn-secondary rounded w-100 py-3">Kirim Pesan</button>
                         </form>
                     </div>
                 </div>
-
             </div>
             <div class="row wow fadeInUp pt-5" data-wow-delay="0.2s ">
                 <?php echo $profile['gmap']
