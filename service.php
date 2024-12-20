@@ -61,8 +61,6 @@ $data1 = $sql1->fetch_assoc()
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>No</th>
-              <th>Departemen</th>
               <th>Alamat </th>
               <th>Lantai </th>
               <th>Jam Operasional</th>
@@ -77,12 +75,7 @@ $data1 = $sql1->fetch_assoc()
             while ($data = $sql->fetch_assoc()) {
             ?>
               <tr>
-                <td>
-                  <?php echo $no++; ?>
-                </td>
-                <td>
-                  <?php echo $data['nama_departemen']; ?>
-                </td>
+                
 
                 <td>
                   <?php echo $data['alamat']; ?>
