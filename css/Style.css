@@ -283,8 +283,7 @@
     color: var(--bs-white) !important;
     background-color: var(
       --bs-primary
-    ); /* Warna tombol untuk layar besar (btn-light) */
-    font-size: 16px;
+    ); 
   }
 }
 
