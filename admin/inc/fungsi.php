@@ -73,9 +73,9 @@ function set_isi($isi)
 class databases
 {
   public $host   = 'localhost';
-  public $name   = 'u881769443_dbarspus	';
+  public $name   = 'u881769443_dbarspus';
   public $pass   = '*IH=?wmkFy1';
-  public $dbname = 'u881769443_dbarspus	';
+  public $dbname = 'u881769443_dbarspus';
   public $mysqli;
 
   //fungsi menguji koneksi database
