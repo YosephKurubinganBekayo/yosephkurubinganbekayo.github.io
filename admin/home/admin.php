@@ -92,9 +92,9 @@ while ($data = $sql->fetch_assoc()) {
             </div>
             <?php
             // Mendapatkan nilai filter dari input GET
-            $bulanFilter = isset($_GET['bulan1']) ? $_GET['bulan1'] : '';
-            $tahunFilter = isset($_GET['tahun1']) ? $_GET['tahun1'] : '';
-            $jenisFilter = isset($_GET['jenis1']) ? $_GET['jenis1'] : '';
+            $bulanFilter = isset($_GET['bulan']) ? $_GET['bulan'] : '';
+            $tahunFilter = isset($_GET['tahun']) ? $_GET['tahun'] : '';
+            $jenisFilter = isset($_GET['jenis']) ? $_GET['jenis'] : '';
 
             // Membuat query SQL dengan kondisi filter
             $sql = "SELECT 
@@ -116,10 +116,10 @@ while ($data = $sql->fetch_assoc()) {
 
             // Menambahkan kondisi filter jika ada
             if (!empty($bulanFilter)) {
-                $sql .= " AND MONTH(tanggal) = '$bulanFilter'";
+                $sql .= " AND MONTH(tanggal_terima) = '$bulanFilter'";
             }
             if (!empty($tahunFilter)) {
-                $sql .= " AND YEAR(tanggal) = '$tahunFilter'";
+                $sql .= " AND YEAR(tanggal_terima) = '$tahunFilter'";
             }
             if (!empty($jenisFilter)) {
                 $sql .= " AND jenis = '$jenisFilter'";
@@ -167,15 +167,15 @@ while ($data = $sql->fetch_assoc()) {
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label for="bulan">Bulan (1-12)</label>
-                                    <input type="number" name="bulan1" class="form-control" placeholder="Bulan (1-12)" value="<?php echo $bulanFilter; ?>">
+                                    <input type="number" name="bulan" class="form-control" placeholder="Bulan (1-12)" value="<?php echo $bulanFilter; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="tahun">Tahun</label>
-                                    <input type="number" name="tahun1" class="form-control" placeholder="Tahun" value="<?php echo $tahunFilter; ?>">
+                                    <input type="number" name="tahun" class="form-control" placeholder="Tahun" value="<?php echo $tahunFilter; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="jenis">Pilih Jenis</label>
-                                    <select name="jenis1" class="form-control">
+                                    <select name="jenis" class="form-control">
                                         <option value="">Pilih Jenis</option>
                                         <option value="F" <?php echo ($jenisFilter == 'F') ? 'selected' : ''; ?>>F</option>
                                         <option value="NF" <?php echo ($jenisFilter == 'NF') ? 'selected' : ''; ?>>NF</option>

@@ -157,7 +157,7 @@ while ($data = $sql->fetch_assoc()) {
 				<div class="text-right mb-3" style="padding: 20px;">
 					<button class="btn btn-primary" data-toggle="modal" data-target="#filterModal_kelas">Filter Data</button>
 					<?php if ($bulanFilter || $tahunFilter || $jenisFilter) : ?>
-						<a href="index.php?page=admin" class="btn btn-danger">Hapus Filter</a>
+						<a href="index.php?page=Petugas" class="btn btn-danger">Hapus Filter</a>
 					<?php endif; ?>
 				</div>
 				<div class="box-body">
