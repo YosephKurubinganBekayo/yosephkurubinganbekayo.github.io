@@ -110,7 +110,7 @@ require 'call_fungtion.php';
   <div id="about" class="container-fluid about py-lg-5 ">
     <div class="container py-5">
       <div class="row g-5 align-items-center">
-        <div class="col-xl-7 wow fadeInLeft mb-3" data-wow-delay="0.2s">
+        <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
           <div>
             <h4 class="text-warning">Tentang Kami</h4>
             <?php
@@ -125,11 +125,10 @@ require 'call_fungtion.php';
 
             <?php }
             ?>
-            <div class="row g-4 ">
-              <div class="col-sm-6">
-                <a href="about.php?id=<?php echo urlencode($data_gambar['id_aboutus']); ?>" class="btn btn-secondary rounded-end rounded-top py-2 px-5 flex-shrink-0">Selengkapnya</a>
-              </div>
-            </div>
+
+
+
+            <a href="about.php?id=<?php echo urlencode($data_gambar['id_aboutus']); ?>" class="btn btn-secondary rounded-end rounded-top py-2 px-5 flex-shrink-0">Selengkapnya</a>
           </div>
         </div>
         <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
