@@ -73,7 +73,7 @@ if ($id > 0) {
     </div>
     <!-- Abaout Start -->
     <div id="about" class="container-fluid about py-5 ">
-        <div class="container py-5">
+        <div class="container py-lg-5">
             <?php
             $gambar_di_detail = ambil_gambar($id);
             if (!empty($gambar_di_detail)) { ?>

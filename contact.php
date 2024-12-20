@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Contact Start -->
     <div class="container-fluid contact py-5 " id="contact">
-        <div class="container py-5">
+        <div class="container py-lg-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
                 <h4 class="text-warning">Kontak</h4>
                 <h1 class="display-5 mb-4">Hubungi Kami</h1>

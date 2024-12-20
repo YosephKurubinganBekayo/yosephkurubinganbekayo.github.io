@@ -49,10 +49,10 @@ $data1 = $sql1->fetch_assoc()
   <!-- Navbar & Hero End -->
   <!-- Services Start -->
   <div id="info_about" class="container-fluid about py-5 ">
-    <div class="text-center mx-auto py-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+    <div class="text-center mx-auto py-lg-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
       <h4 class="text-warning">Informasi Pelayanan</h4>
       <h1 class="display-5 mb-4">Informasi Pelayanan <?php echo $data1['nama_departemen']; ?></h1>
-      <p class="mb-0">
+      <p class="mb-2">
       Temukan informasi lengkap tentang jadwal layanan, koleksi terbaru, dan berbagai program menarik yang bisa Anda ikuti. Ayo, jelajahi sekarang!
       </p>
     </div>
@@ -120,7 +120,7 @@ $data1 = $sql1->fetch_assoc()
       Temukan pengalaman literasi yang lebih mudah dan menarik disini.
       </p>
     </div>
-    <div class="container-fluid about py-5 ">
+    <div class="container-fluid about py-lg-5 ">
       <?php
 
       // if (!empty($departemens)) {
@@ -142,7 +142,7 @@ $data1 = $sql1->fetch_assoc()
               $deskripsi = $service['deskripsi'];
             ?>
               <li id="layanan-<?php echo $service['id'] ?>" class="pt-5">
-                <div class="container border-bottom pt-5">
+                <div class="container border-bottom pt-lg-5">
                   <div class="row g-5 align-items-center  ">
                     <!-- <div class="col-xl-9 wow fadeInLeft" data-wow-delay="0.2s"> -->
                     <div>
