@@ -96,7 +96,7 @@ if (isset($_POST['btnLogin'])) {
                   </div>
 
                   <!-- Submit Button -->
-                  <button name="btnLogin" type="submit" class="btn btn-secondary btn-block my-3 w-100 rounded">Login</button>
+                  <button name="btnLogin" type="submit" class="btn btn-secondary btn-block my-3 w-100 rounded">Masuk</button>
                 </form>
               </div>
             </div>
