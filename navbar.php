@@ -63,3 +63,16 @@ $current_page = basename($_SERVER['PHP_SELF']); // Mendapatkan nama file saat in
     </div>
   </div>
 </nav>
+<style>
+  /* Warna tombol untuk layar ponsel */
+  @media (max-width: 767px) {
+    .btn-custom {
+      width: 100% !important;
+      padding: 10px 15px !important;
+      text-align: center !important;
+      border-radius: 5px !important;
+      color: var(--bs-white) !important;
+      background-color: var(--bs-primary) !important;
+    }
+  }
+</style>

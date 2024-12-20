@@ -273,17 +273,7 @@
 }
 /* Default styling untuk tombol */
 
-/* Warna tombol untuk layar ponsel */
-@media (max-width: 767px) {
-  .btn-custom {
-    width: 100% !important;
-    padding: 10px 15px !important;
-    text-align: center !important;
-    border-radius: 5px !important;
-    color: var(--bs-white) !important;
-    background-color: var(--bs-primary) !important;
-  }
-}
+
 
 /*** Navbar End ***/
 
