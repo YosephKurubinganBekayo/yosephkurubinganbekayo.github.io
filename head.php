@@ -44,5 +44,5 @@
   <script src="admin/plugins/datatables2/DataTables-1.10.16/js/jquery.dataTables.min.js"></script>
 
   <!-- Template Stylesheet -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/Style.css" rel="stylesheet" />
 </head>
