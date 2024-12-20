@@ -191,7 +191,6 @@ $data1 = $sql1->fetch_assoc()
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>No Induk</th>
                   <th>Judul Buku</th>
                   <th>Pengarang</th>
                   <th>Penerbit</th>
@@ -234,7 +233,6 @@ $data1 = $sql1->fetch_assoc()
                 ?>
                   <tr>
                     <td><?php echo $no++; ?></td>
-                    <td><?php echo $data['no_induk']; ?></td>
                     <td><?php echo $data['judul_buku']; ?></td>
                     <td><?php echo $data['pengarang']; ?></td>
                     <td><?php echo $data['penerbit']; ?></td>
