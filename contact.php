@@ -70,68 +70,82 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </p>
             </div>
             <div class="row kontak_item">
-                <div class="col-md-6">
-                    <div class="bg-light rounded p-5 mb-5 h-100 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="col-md-6 pb-4">
+                    <div class="bg-light rounded  d-flex flex-column justify-content-between p-4 h-100 wow fadeInLeft" data-wow-delay="0.2s">
                         <h4 class="text-warning mb-4">Tekan untuk menghubungi</h4>
-                        <div class="row g-4">
-                            <!-- <div class="col-md-6"> -->
-                            <div class="contact-add-item">
-                                <div class="contact-icon text-warning mb-4">
+                        <!-- Alamat -->
+                        <a class="text-body" href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." target="_blank">
+                            <div class="contact-add-item d-flex py-3">
+                                <div class="contact-icon text-warning mb-4 me-3">
                                     <i class="fas fa-map-marker-alt fa-2x"></i>
                                 </div>
                                 <div>
                                     <h4>Alamat</h4>
-                                    <p class="mb-0"> <a class="text-dark" href="https://www.google.com/maps?q=Jl.+R.+W.+Monginsidi+No.3,+Pasir+Panjang,+Kec.+Kota+Lama,+Kota+Kupang,+Nusa+Tenggara+Tim." target="_blank">Jl. R. W. Monginsidi No.3, Pasir Panjang, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.
-                                        </a> </p>
+                                    <p class="mb-0">
+                                        Jl. R. W. Monginsidi No.3, Pasir Panjang, Kec. Kota Lama, Kota Kupang, Nusa Tenggara Tim.
+                                    </p>
                                 </div>
                             </div>
-                            <!-- </div> -->
-                            <!-- <div class="col-md-6"> -->
-                            <div class="contact-add-item">
-                                <div class="contact-icon text-warning mb-4">
+                        </a>
+                        <!-- Email -->
+                        <a class="text-body" href="mailto:<?php echo $profile['email']; ?>">
+                            <div class="contact-add-item d-flex py-3">
+                                <div class="contact-icon text-warning mb-4 me-3">
                                     <i class="fas fa-envelope fa-2x"></i>
                                 </div>
                                 <div>
                                     <h4>Email</h4>
-                                    <p class="mb-0">
-                                        <a class="text-dark" href="mailto:<?php echo $profile['email'] ?>"><?php echo $profile['email'] ?></a>
+                                    <p class="mb-0 email-text">
+                                        <?php echo $profile['email']; ?>
                                     </p>
                                 </div>
                             </div>
-                            <!-- </div> -->
-                            <!-- <div class="col-md-6"> -->
-                            <div class="contact-add-item">
-                                <div class="contact-icon text-warning mb-4">
+                        </a>
+                        <style>
+                            .email-text {
+                                display: inline-block;
+                                /* Memungkinkan batasan lebar berlaku */
+                                width: 250px;
+                                /* Atur lebar sesuai kebutuhan */
+                                white-space: normal;
+                                /* Izinkan teks membungkus ke baris berikutnya */
+                                word-break: break-all;
+                                /* Memaksa teks panjang tanpa spasi untuk terputus */
+                                overflow-wrap: break-word;
+                                /* Alternatif untuk memutus teks */
+                            }
+                        </style>
+                        <!-- Telepon -->
+                        <a class="text-body" href="tel:<?php echo $profile['telepon']; ?>">
+                            <div class="contact-add-item d-flex py-3">
+                                <div class="contact-icon text-warning mb-4 me-3">
                                     <i class="fa fa-phone-alt fa-2x"></i>
                                 </div>
                                 <div>
                                     <h4>Telepon</h4>
                                     <p class="mb-0">
-                                        <a class="text-dark" href="mailto:<?php echo $profile['telepon'] ?>"><?php echo $profile['telepon'] ?></a>
+                                        <?php echo $profile['telepon']; ?>
                                     </p>
-                                    <!-- <p class="mb-0"><?php echo $profile['telepon'] ?></p> -->
                                 </div>
                             </div>
-                            <!-- </div> -->
-                            <div class="col-md-6">
-                                <div class="contact-add-item">
-                                    <div class="contact-icon text-warning mb-4">
-                                        <i class="fab fa-whatsapp fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h4>WhatsApp</h4>
-                                        <p class="mb-0">
-                                            <a class="text-dark" href="https://wa.me/<?php echo $profile['telepon'] ?>" target="_blank">
-                                                <?php echo $profile['telepon'] ?>
-                                            </a>
-                                        </p>
-                                    </div>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a class="text-body" href="https://wa.me/<?php echo $profile['telepon']; ?>" target="_blank">
+                            <div class="contact-add-item d-flex py-3">
+                                <div class="contact-icon text-warning mb-4 me-3">
+                                    <i class="fab fa-whatsapp fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4>WhatsApp</h4>
+                                    <p class="mb-0">
+                                        <?php echo $profile['telepon']; ?>
+                                    </p>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 pb-4">
                     <div class="bg-light p-5 rounded h-100 wow fadeInRight" data-wow-delay="0.2s">
                         <h4 class="text-warning">Kirim pesan ke kami</h4>
                         <p class="mb-4">Butuh Bantuan..? Silahkan Hubungi kami untuk informasi lebih lanjut</p>
