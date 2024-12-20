@@ -83,7 +83,7 @@ if (isset($_GET['id'])) {
                         <div class="blog-content">
                             <p><?php echo nl2br(($blog['deskripsi'])); ?></p>
                         </div>
-                        <div class="text-start mx-4">
+                        <div class="text-start my-4">
                             <a href="articel_blog.php" class="btn btn-secondary rounded-start rounded-top">Kembali ke
                                 Blog</a>
                         </div>
