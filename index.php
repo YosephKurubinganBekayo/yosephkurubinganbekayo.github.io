@@ -171,7 +171,7 @@ require 'call_fungtion.php';
           foreach ($services as $service) {
             $nama_layanan = $service['nama_layanan'];
             $deskripsi = $service['deskripsi'];
-            $max_length = 180;
+            $max_length = 125;
 
             // Hitung total panjang karakter
             $total_length = strlen($nama_layanan) + strlen($deskripsi);
@@ -186,7 +186,7 @@ require 'call_fungtion.php';
                 <div class="service-img">
                   <img src="img/<?php echo htmlspecialchars($service['gambar']); ?>" class="img-fluid rounded-top w-100" alt="<?php echo htmlspecialchars($service['nama_layanan']); ?>" style="height: 250px; object-fit: cover; object-position: center; width: 100%; " />
                 </div>
-                <div class="rounded-bottom p-4" style="height: 180px; overflow: hidden;">
+                <div class="rounded-bottom p-4" style="height: 187px; overflow: hidden;">
                   <a href="#" class="h4 text-warning d-inline-block mb-4">
                     <?php echo  $nama_layanan ?>
                   </a>
@@ -194,7 +194,7 @@ require 'call_fungtion.php';
                   <?php echo  $deskripsi ?>
                   <!-- </p> -->
                 </div>
-                <div class="p-4">
+                <div class="px-4 py-3 border-top">
                   <a class="btn btn-secondary rounded-start rounded-top py-2 px-4" href="service.php?id=<?php echo htmlspecialchars($service['id_departemen']) ?>#layanan-<?php echo htmlspecialchars($service['id']) ?>">Baca selengkapnya</a>
                 </div>
               </div>
