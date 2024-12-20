@@ -397,6 +397,20 @@ require 'call_fungtion.php';
                 </div>
               </div>
             </a>
+            <style>
+                    .email-text {
+                      display: inline-block;
+                      /* Memungkinkan batasan lebar berlaku */
+                      width: 250px;
+                      /* Atur lebar sesuai kebutuhan */
+                      white-space: normal;
+                      /* Izinkan teks membungkus ke baris berikutnya */
+                      word-break: break-all;
+                      /* Memaksa teks panjang tanpa spasi untuk terputus */
+                      overflow-wrap: break-word;
+                      /* Alternatif untuk memutus teks */
+                    }
+                  </style>
             <!-- Telepon -->
             <a class="" href="tel:<?php echo $profile['telepon']; ?>">
               <div class="contact-add-item d-flex py-3">
