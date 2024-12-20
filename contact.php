@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
                 <div class="col-md-6 pb-4">
-                    <div class="bg-light p-5 rounded h-100 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="bg-light p-3 rounded h-100 wow fadeInRight" data-wow-delay="0.2s">
                         <h4 class="text-warning">Kirim pesan ke kami</h4>
                         <p class="mb-4">Butuh Bantuan..? Silahkan Hubungi kami untuk informasi lebih lanjut</p>
                         <form method="POST">
