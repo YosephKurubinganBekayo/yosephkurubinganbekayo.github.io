@@ -391,7 +391,7 @@ require 'call_fungtion.php';
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <p class="mb-0">
+                  <p class="mb-0 email-text">
                     <?php echo $profile['email']; ?>
                   </p>
                 </div>
